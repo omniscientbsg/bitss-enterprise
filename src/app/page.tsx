@@ -85,8 +85,8 @@ export default function Home() {
     gsap.fromTo('.hero-fade', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 1.5, stagger: 0.2, ease: "power3.out", delay: 0.6 });
 
     // Precision Stat Counters on Load
-    gsap.to(stat12Ref.current, { innerHTML: 12, duration: 2.5, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.8 });
-    gsap.to(stat0Ref.current, { innerHTML: 0, duration: 1.5, ease: "power2.out", snap: { innerHTML: 1 }, delay: 1, onStart: () => { if(stat0Ref.current) stat0Ref.current.innerHTML = "99"; }});
+    gsap.to(stat12Ref.current, { innerHTML: 63, duration: 2.5, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.8 });
+    gsap.to(stat0Ref.current, { innerHTML: 7, duration: 1.5, ease: "power2.out", snap: { innerHTML: 1 }, delay: 1 });
     gsap.to(stat8Ref.current, { innerHTML: 8, duration: 2, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.9 });
 
     
@@ -174,8 +174,8 @@ export default function Home() {
                   </div>
                   <div className="bg-void px-8 py-10 relative transition-colors hover:bg-white/[0.02] group">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 relative z-10"><span ref={stat0Ref}>99</span></div>
-                    <div className="font-mono text-[10px] md:text-[11px] tracking-[0.1em] font-medium text-white/50 uppercase relative z-10 group-hover:text-white transition-colors">Downtime Tolerance</div>
+                    <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 relative z-10"><span ref={stat0Ref}>7</span><span className="text-accent text-[24px] md:text-[32px] align-super leading-none mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">+</span></div>
+                    <div className="font-mono text-[10px] md:text-[11px] tracking-[0.1em] font-medium text-white/50 uppercase relative z-10 group-hover:text-white transition-colors">Years Experience</div>
                   </div>
                   <div className="bg-void px-8 py-10 relative transition-colors hover:bg-white/[0.02] group">
                     <div className="absolute inset-0 bg-gradient-to-tl from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -259,7 +259,7 @@ export default function Home() {
 
                    <div className="w-16 h-16 lg:w-20 lg:h-20 bg-void border border-accent2/20 rounded-2xl flex items-center justify-center relative overflow-hidden backdrop-blur-md">
                       <div className="absolute inset-0 bg-accent2/10 animate-pulse"></div>
-                      <div className="absolute inset-0 bg-cover bg-center mix-blend-screen opacity-90 scale-[1.3] animate-pulse" style={{ backgroundImage: "url(https://media.giphy.com/media/3o7TKR1b2X2uGBYV7a/giphy.gif)" }}></div>
+                      <svg className="w-16 h-16 text-accent2 opacity-80 animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1"><circle cx="50" cy="50" r="45" strokeDasharray="4 4" /><ellipse cx="50" cy="50" rx="45" ry="15" /><ellipse cx="50" cy="50" rx="15" ry="45" /><path d="M 5 50 H 95 M 50 5 V 95" strokeOpacity="0.5" /></svg>
                    </div>
                 </div>
 
