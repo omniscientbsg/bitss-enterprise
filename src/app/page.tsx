@@ -319,8 +319,8 @@ export default function Home() {
                 { num: '03', title: 'AI Tech Solutions', desc: 'Secure, private LLM layers tailored directly into your core data architecture.', i: Icons.ai },
                 { num: '04', title: 'Headless E-commerce', desc: 'Scalable APIs and robust edge-caching for D2C platforms to support massive concurrent checkouts.', i: Icons.ecom },
                 { num: '05', title: 'IoT & Hardware Systems', desc: 'Bridging the gap between physical infrastructure and intelligent software layers.', i: Icons.iot },
-                { num: '06', title: 'Predictive Analytics', desc: 'Data pipelines that forecast outcomes before they become incidents.', i: Icons.analytics },
-                { num: '07', title: 'Identity Management', desc: 'Biometric and multi-factor authentication systems for zero-tolerance security environments.', i: Icons.identity },
+                { num: '06', title: 'CRM & ERP Solutions', desc: 'Centralized platforms to manage sales funnels, automate leads, and streamline business operations across all departments.', i: Icons.analytics },
+                { num: '07', title: 'B2B Client Portals', desc: 'Secure, high-conversion hubs allowing partners and clients to plug directly into your proprietary databases and workflows.', i: Icons.identity },
                 { num: '08', title: 'Edge Compute Layer', desc: 'Deploying computation physically closer to the demand — sub-millisecond response.', i: Icons.edge },
               ].map((cap, i) => (
                 <div key={i} className="bg-[#0b0e14] p-8 lg:p-10 relative overflow-hidden group hover:bg-[#11151e] transition-colors duration-500 cursor-crosshair">
