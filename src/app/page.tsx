@@ -89,14 +89,7 @@ export default function Home() {
     gsap.to(stat0Ref.current, { innerHTML: 0, duration: 1.5, ease: "power2.out", snap: { innerHTML: 1 }, delay: 1, onStart: () => { if(stat0Ref.current) stat0Ref.current.innerHTML = "99"; }});
     gsap.to(stat8Ref.current, { innerHTML: 8, duration: 2, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.9 });
 
-    // Elegant Structural Scroll Reveal
-    const sections = gsap.utils.toArray('.');
-    sections.forEach((sec: any) => {
-      gsap.fromTo(sec, 
-        { opacity: 0, y: 40, filter: "blur(4px)" },
-        { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.6, ease: "power3.out", scrollTrigger: { trigger: sec, start: "top 85%" } }
-      );
-    });
+    
 
     // Logo Marquee Engine
     gsap.to('.logo-marquee-track', { xPercent: -50, ease: "none", duration: 25, repeat: -1 });
