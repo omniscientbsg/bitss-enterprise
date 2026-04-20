@@ -321,7 +321,7 @@ export default function Home() {
                 { num: '05', title: 'IoT & Hardware Systems', desc: 'Bridging the gap between physical infrastructure and intelligent software layers.', i: Icons.iot },
                 { num: '06', title: 'CRM & ERP Solutions', desc: 'Centralized platforms to manage sales funnels, automate leads, and streamline business operations across all departments.', i: Icons.analytics },
                 { num: '07', title: 'B2B Client Portals', desc: 'Secure, high-conversion hubs allowing partners and clients to plug directly into your proprietary databases and workflows.', i: Icons.identity },
-                { num: '08', title: 'Edge Compute Layer', desc: 'Deploying computation physically closer to the demand — sub-millisecond response.', i: Icons.edge },
+                { num: '08', title: 'Legacy Modernization', desc: 'Transitioning brittle, outdated software monoliths into high-speed, scalable Next.js and React Native architecture.', i: Icons.edge },
               ].map((cap, i) => (
                 <div key={i} className="bg-[#0b0e14] p-8 lg:p-10 relative overflow-hidden group hover:bg-[#11151e] transition-colors duration-500 cursor-crosshair">
                   <div className="flex flex-col h-full relative z-10 w-full">
