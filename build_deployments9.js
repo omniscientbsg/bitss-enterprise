@@ -1,9 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { BentoCard } from "@/components/ui/BentoCard";
+const fs = require('fs');
+const file = 'C:\\Users\\Admin\\Documents\\BITSS\\src\\app\\deployments\\page.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-export default function Deployments() {
-  return (
+const regex = /return \([\s\S]*?\);\n\}/m;
+
+const replacement = eturn (
     <div className="bg-void font-body text-text relative min-h-screen overflow-x-hidden selection:bg-accent2/30 selection:text-white">
       <Navbar />
       <main className="pt-[140px] lg:pt-[200px] px-6 lg:px-16 max-w-[1200px] mx-auto w-full min-h-[80vh] pb-32">
@@ -72,10 +73,10 @@ export default function Deployments() {
           {/* PROJECT 4 */}
           <BentoCard className="flex flex-col lg:flex-row gap-8 lg:gap-16 group p-8 lg:p-12 border border-white/5 bg-[#0b0e14] hover:bg-[#11151e] transition-colors duration-500 shadow-xl overflow-hidden cursor-crosshair">
             <div className="flex-1 relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#111520] border border-white/5 text-accent text-xs font-mono mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_5px_#e8642a]"></span> PIPELINE ARCHITECTURE
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#111520] border border-white/5 text-[#f97316] text-xs font-mono mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f97316] shadow-[0_0_5px_#f97316]"></span> PIPELINE ARCHITECTURE
               </div>
-              <h3 className="text-4xl font-display font-medium tracking-tight mb-4 text-white group-hover:text-accent transition-colors">Kamdhenu Protocol</h3>
+              <h3 className="text-4xl font-display font-medium tracking-tight mb-4 text-white group-hover:text-[#f97316] transition-colors">Kamdhenu Protocol</h3>
               <p className="text-white/60 leading-[1.8] group-hover:text-white/80 transition-colors mb-6 text-[15px]">
                 Developed a comprehensive React Native web application aligning Kamdhenu's real estate projects, sales pipelines, and internal marketing execution into a unified operational dashboard. Replaced fragmented Excel tracking with a secure central database.
               </p>
@@ -200,5 +201,8 @@ export default function Deployments() {
       <Footer />
     </div>
   );
-}
+};
 
+content = content.replace(regex, newContent);
+
+fs.writeFileSync(file, content, 'utf8');

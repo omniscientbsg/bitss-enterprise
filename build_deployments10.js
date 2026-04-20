@@ -1,19 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { BentoCard } from "@/components/ui/BentoCard";
+const fs = require('fs');
+const file = 'C:\\Users\\Admin\\Documents\\BITSS\\src\\app\\deployments\\page.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-export default function Deployments() {
-  return (
-    <div className="bg-void font-body text-text relative min-h-screen overflow-x-hidden selection:bg-accent2/30 selection:text-white">
-      <Navbar />
-      <main className="pt-[140px] lg:pt-[200px] px-6 lg:px-16 max-w-[1200px] mx-auto w-full min-h-[80vh] pb-32">
-        <h1 className="font-display font-medium text-[clamp(48px,6vw,84px)] text-white leading-[1.05] tracking-tight mb-8">Selected Deployments</h1>
-        <p className="text-[16px] text-white/60 max-w-[600px] leading-[1.8] font-light mb-16">
-          A deep dive into our mission-critical systems built for absolute scale, compliance, and zero-trust security.
-        </p>
+const regex = /\{\/\* Indian Army \*\/\}([\s\S]*?)<\/main>\s*<Footer \/>\s*<\/>\s*\);\s*\}/;
 
-        <div className="space-y-12">
-          {/* PROJECT 1 */}
+const newContent = \{/* PROJECT 1 */}
           <BentoCard className="flex flex-col lg:flex-row gap-8 lg:gap-16 group p-8 lg:p-12 border border-white/5 bg-[#0b0e14] hover:bg-[#11151e] transition-colors duration-500 shadow-xl overflow-hidden cursor-crosshair">
             <div className="flex-1 relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#111520] border border-white/5 text-accent text-xs font-mono mb-8">
@@ -200,5 +191,8 @@ export default function Deployments() {
       <Footer />
     </div>
   );
-}
+}\;
 
+content = content.replace(regex, newContent);
+
+fs.writeFileSync(file, content, 'utf8');

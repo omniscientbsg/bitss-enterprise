@@ -1,9 +1,8 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { BentoCard } from "@/components/ui/BentoCard";
+const fs = require('fs');
+const file = 'C:\\Users\\Admin\\Documents\\BITSS\\src\\app\\deployments\\page.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-export default function Deployments() {
-  return (
+content = content.replace(/return \([\s\S]*?\);\n\}/m, \eturn (
     <div className="bg-void font-body text-text relative min-h-screen overflow-x-hidden selection:bg-accent2/30 selection:text-white">
       <Navbar />
       <main className="pt-[140px] lg:pt-[200px] px-6 lg:px-16 max-w-[1200px] mx-auto w-full min-h-[80vh] pb-32">
@@ -200,5 +199,6 @@ export default function Deployments() {
       <Footer />
     </div>
   );
-}
+}\;
 
+fs.writeFileSync(file, newContent, 'utf8');

@@ -18,7 +18,7 @@ export default function Navbar() {
           What We Do
         </Link>
         <div className="w-[1px] h-3 bg-white/10"></div>
-        <Link href="#deployments" className="font-mono text-[11px] font-medium tracking-[0.1em] text-muted decoration-none uppercase transition-colors hover:text-white">
+        <Link href="/deployments" className="font-mono text-[11px] font-medium tracking-[0.1em] text-muted decoration-none uppercase transition-colors hover:text-white">
           Deployments
         </Link>
         <div className="w-[1px] h-3 bg-white/10"></div>
