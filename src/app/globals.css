@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-void: #05070a;
+  --color-surface: #0c0f14;
+  --color-panel: #111520;
+  --color-border-line: rgba(255, 255, 255, 0.07);
+  --color-border-high: rgba(255, 255, 255, 0.14);
+  --color-text: #e8eaf0;
+  --color-muted: #5a6070;
+  --color-accent: #e8642a;
+  --color-accent2: #4d7fff;
+
+  --font-display: var(--font-outfit);
+  --font-mono: var(--font-space-grotesk);
+  --font-body: var(--font-outfit);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    background-color: var(--color-void);
+    color: var(--color-text);
+  }
+  
+  html, body {
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Cursor line accent */
+  .cursor-line {
+    width: 2px;
+    height: 20px;
+    background: var(--color-accent);
+    display: inline-block;
+    vertical-align: middle;
+    animation: blink 1.2s step-end infinite;
+    margin-left: 4px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* Hero Matrix Ruled Background */
+  .hero-ruled-bg {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--color-border-line) 1px, transparent 1px);
+    background-size: 100% 80px;
+    background-position: 0 60px;
+    pointer-events: none;
+  }
+
+  /* Architectural Sweep Node */
+  .scanner-sweep {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, transparent, rgba(77, 127, 255, 0.03), rgba(232, 100, 42, 0.01), transparent);
+    animation: sweep 12s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes sweep {
+    0% { transform: translateY(-500px); }
+    100% { transform: translateY(150vh); }
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-ticker {
+    animation: ticker 25s linear infinite;
+  }
 }

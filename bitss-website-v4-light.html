@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITSS | Enterprise Systems & Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #0f172a; overflow-x: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Premium Noise Texture (Light Mode) */
+        .noise { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; opacity: 0.04; background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E'); mix-blend-mode: multiply; }
+
+        /* Brand Gradients (Slate, Blue & Orange) */
+        .text-gradient { background: linear-gradient(to right, #0f172a, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .border-gradient { position: relative; }
+        .border-gradient::after { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(to bottom right, #3b82f6, transparent, #f97316); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+        
+        /* Bento Cards (Light Mode) */
+        .bento-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.02); transition: all 0.3s ease; position: relative; }
+        .bento-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px -10px rgba(59, 130, 246, 0.1); border-color: transparent; }
+        .bento-card:hover.border-gradient::after { opacity: 1; }
+
+        /* Marquee with Logos */
+        .marquee-container { overflow: hidden; white-space: nowrap; width: 100%; position: relative; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-content { display: inline-flex; align-items: center; animation: marquee 30s linear infinite; }
+        .marquee-content img { height: 1.75rem; margin-right: 5rem; filter: grayscale(100%) opacity(40%); transition: all 0.3s ease; cursor: pointer; }
+        .marquee-content img:hover { filter: grayscale(0%) opacity(100%); }
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+
+        ::-webkit-scrollbar { width: 0px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-100 selection:text-blue-900">
+    <div class="noise"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="flex flex-col gap-0.5">
+                    <div class="w-4 h-1.5 bg-blue-500 rounded-sm"></div>
+                    <div class="w-4 h-1.5 bg-orange-500 rounded-sm"></div>
+                </div>
+                <span class="text-2xl font-bold tracking-tighter text-slate-900">BITSS</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+                <a href="#expertise" class="hover:text-slate-900 transition-colors">Expertise</a>
+                <a href="#deployments" class="hover:text-slate-900 transition-colors">Deployments</a>
+                <a href="#philosophy" class="hover:text-slate-900 transition-colors">Philosophy</a>
+            </div>
+            <button class="bg-slate-900 text-white px-6 py-2.5 text-sm font-bold rounded-md hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/10">
+                Engage Us
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-48 pb-20 px-6 z-10 max-w-7xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono mb-8">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            SYSTEM ARCHITECTURE & NATIVE SOFTWARE
+        </div>
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-[1.05] mb-8 text-slate-900">
+            Building enterprise systems. <br>
+            <span class="text-gradient">Bit by bit.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed mb-12 font-light">
+            We engineer mission-critical applications, CRMs, and secure digital infrastructure from the ground up. Complex architecture, constructed piece by piece.
+        </p>
+        <div class="flex flex-wrap gap-4">
+            <button class="bg-blue-600 text-white px-8 py-4 font-semibold rounded-md hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-xl shadow-blue-600/20">
+                Explore Capabilities <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Partners Marquee (Actual Logos) -->
+    <section class="py-12 border-y border-slate-100 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 mb-8 flex justify-between items-center">
+            <p class="text-xs font-mono text-slate-400 uppercase tracking-widest font-semibold">Official Infrastructure Partners</p>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <!-- Group 1 -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="Hostinger">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay">
+                <!-- Group 2 -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="Hostinger">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay">
+                <!-- Group 3 (for seamless loop) -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="Hostinger">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay">
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthcare / Security Bait -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+            <div class="flex-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-600 text-xs font-mono mb-6">
+                    <i data-lucide="shield-alert" class="w-3 h-3"></i> MISSION-CRITICAL SECURITY
+                </div>
+                <h2 class="text-4xl font-bold tracking-tight mb-6 leading-tight text-slate-900">Engineered for industries that cannot afford to fail.</h2>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    When data integrity is a matter of compliance, off-the-shelf software is a liability. We architect secure, encrypted databases and zero-trust APIs perfect for high-stakes environments like Healthcare, Finance, and Enterprise Manufacturing.
+                </p>
+                <ul class="space-y-4 text-sm font-mono text-slate-600">
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> HIPAA & GDPR Ready Infrastructures</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> End-to-End Encryption Architecture</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-slate-900"></i> Role-Based Access Control (RBAC)</li>
+                </ul>
+            </div>
+            <!-- Code Block Visual (Kept dark for IDE contrast) -->
+            <div class="flex-1 w-full bento-card border-gradient p-1.5 rounded-2xl bg-white shadow-xl shadow-slate-200/50">
+                <div class="bg-slate-900 rounded-xl p-8 font-mono text-xs text-blue-300 overflow-hidden relative">
+                    <p class="text-slate-500 mb-4">// BITSS CORE DATA ROUTER</p>
+                    <p><span class="text-orange-400">const</span> <span class="text-blue-200">initHealthcareSystem</span> = <span class="text-white">async</span> () => {</p>
+                    <p class="ml-4"><span class="text-orange-400">await</span> Database.<span class="text-blue-200">connect</span>({ secure: <span class="text-blue-400">true</span>, encrypted: <span class="text-blue-400">true</span> });</p>
+                    <p class="ml-4"><span class="text-orange-400">await</span> Firewall.<span class="text-blue-200">initialize</span>(ZeroTrustPolicy);</p>
+                    <p class="ml-4 text-slate-500 mt-2">// Assembling infrastructure bit by bit</p>
+                    <p class="ml-4 text-white">System.<span class="text-blue-200">mount</span>(ComplianceModule);</p>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work (The Flex) -->
+    <section id="deployments" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-100">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-2">Selected Deployments</h2>
+            <p class="text-slate-500">Mission-critical systems built for absolute scale and security.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Indian Army Project -->
+            <div class="bento-card border-gradient p-8 md:p-10 rounded-2xl flex flex-col justify-between min-h-[380px] relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-orange-600 text-xs font-mono mb-8 shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> ZERO-TRUST SECURITY
+                    </div>
+                    <h3 class="text-3xl font-bold tracking-tight mb-4 text-slate-900">Indian Army</h3>
+                    <p class="text-slate-600 leading-relaxed max-w-md">
+                        Engineered a highly encrypted, air-gapped resource and logistics allocation dashboard. Built entirely on a custom Zero-Trust Architecture to ensure data sovereignty and multi-factor clearance for defense operations.
+                    </p>
+                </div>
+                <div class="relative z-10 mt-10 flex gap-3 flex-wrap">
+                    <span class="text-xs font-mono text-slate-600 px-3 py-1.5 bg-slate-100 rounded-md">Custom ERP</span>
+                    <span class="text-xs font-mono text-slate-600 px-3 py-1.5 bg-slate-100 rounded-md">Security Architecture</span>
+                </div>
+            </div>
+
+            <!-- boAt Project -->
+            <div class="bento-card border-gradient p-8 md:p-10 rounded-2xl flex flex-col justify-between min-h-[380px] relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-blue-600 text-xs font-mono mb-8 shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> HIGH-CONCURRENCY SCALE
+                    </div>
+                    <h3 class="text-3xl font-bold tracking-tight mb-4 text-slate-900">boAt</h3>
+                    <p class="text-slate-600 leading-relaxed max-w-md">
+                        Architected headless D2C infrastructure capable of handling massive traffic spikes. Engineered edge-cached checkout flows that sustained tens of thousands of concurrent requests during peak flash sales without latency degradation.
+                    </p>
+                </div>
+                <div class="relative z-10 mt-10 flex gap-3 flex-wrap">
+                    <span class="text-xs font-mono text-slate-600 px-3 py-1.5 bg-slate-100 rounded-md">Headless Commerce</span>
+                    <span class="text-xs font-mono text-slate-600 px-3 py-1.5 bg-slate-100 rounded-md">API Integration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Philosophy -->
+    <section id="expertise" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-100">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-12">Full-Stack Sovereignty</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bento-card border-gradient p-8 rounded-2xl md:col-span-2">
+                <i data-lucide="database" class="w-6 h-6 text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Custom Enterprise Software (ERP/CRM)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed max-w-lg">We replace off-the-shelf software with proprietary operational systems. From factory-floor OEE tracking to complex HR pipelines, we build the exact digital brain your company needs to operate.</p>
+            </div>
+            
+            <div class="bento-card border-gradient p-8 rounded-2xl">
+                <i data-lucide="smartphone" class="w-6 h-6 text-orange-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Native Mobile Apps</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">High-performance iOS and Android applications built for complex workflows, offline caching, and hardware integration.</p>
+            </div>
+            
+            <div class="bento-card border-gradient p-8 rounded-2xl">
+                <i data-lucide="layout-template" class="w-6 h-6 text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Web Platforms</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Corporate portals and highly interactive web applications built on modern frameworks like React and Next.js.</p>
+            </div>
+
+            <div id="philosophy" class="bento-card border-gradient p-8 rounded-2xl md:col-span-2 flex flex-col justify-center bg-gradient-to-r from-slate-50 to-white">
+                <h3 class="text-xl font-bold mb-3 text-slate-900">The Bits Philosophy</h3>
+                <p class="text-slate-600 text-sm leading-relaxed max-w-xl">A 'bit' is the most basic unit of information in computing. At BITSS, we believe flawless enterprise architecture is achieved by assembling the perfect foundational blocks. Piece by piece. Bit by bit.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-slate-100 mt-10 bg-white">
+        <p class="text-slate-400 text-xs font-mono uppercase tracking-widest font-semibold">© 2026 BITSS. Engineered in India.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
