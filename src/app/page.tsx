@@ -134,12 +134,12 @@ export default function Home() {
       
       <main className="flex-1 w-full pt-[72px]">
         {/* PREMIUM HERO SECTION */}
-        <section className="min-h-[85vh] flex flex-col lg:flex-row relative overflow-hidden w-full">
+        <section className="min-h-0 lg:min-h-[85vh] flex flex-col lg:flex-row relative overflow-hidden w-full">
           {/* Subtle geometric premium noise */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#4d7fff15,transparent_50%)] pointer-events-none z-0"></div>
 
           {/* Left Node */}
-          <div className="w-full lg:w-[55%] p-6 md:p-10 lg:pl-16 lg:pt-[120px] lg:pb-[100px] flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative z-10">
+          <div className="w-full lg:w-[55%] p-6 py-12 md:p-10 lg:pl-16 lg:pt-[120px] lg:pb-[100px] flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative z-10">
             <p className="hero-fade font-mono text-[10px] md:text-[11px] font-medium tracking-[0.25em] text-accent2 uppercase flex items-center gap-3 mb-6 ">
               <span className="block w-8 h-[1px] bg-accent2"></span> Elite Engineering Core
             </p>
@@ -208,26 +208,26 @@ export default function Home() {
                   {/* Glowing, Interactive SVGs */}
                   <div className="logo-marquee-track flex whitespace-nowrap items-center w-max">
                      {[...Array(4)].map((_, idx) => (
-                        <div key={idx} className="flex items-center space-x-24 px-12">
+                        <div key={idx} className="flex items-center space-x-12 md:space-x-24 px-12">
                            {/* Meta (Blue Glow) */}
                            <span className="group flex items-center justify-center relative cursor-crosshair">
                               <div className="absolute inset-0 bg-[#0668E1] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-6 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-6 md:h-8 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
                            </span>
                            {/* Shopify (Green Glow) */}
                            <span className="group flex items-center justify-center relative cursor-crosshair">
                               <div className="absolute inset-0 bg-[#95bf47] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" className="h-7 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" className="h-7 md:h-9 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
                            </span>
                            {/* Hostinger (Purple Glow) */}
                            <span className="group flex items-center justify-center relative cursor-crosshair">
                               <div className="absolute inset-0 bg-[#6c5b7b] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="Hostinger" className="h-6 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
+                              <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="Hostinger" className="h-6 md:h-8 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
                            </span>
                            {/* Razorpay (Blue/Orange Glow) */}
                            <span className="group flex items-center justify-center relative cursor-crosshair">
                               <div className="absolute inset-0 bg-[#0288D1] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay" className="h-6 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay" className="h-6 md:h-8 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
                            </span>
                         </div>
                      ))}
