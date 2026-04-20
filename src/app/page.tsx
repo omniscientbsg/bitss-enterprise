@@ -140,7 +140,7 @@ export default function Home() {
 
           {/* Left Node */}
           <div className="w-full lg:w-[55%] p-6 md:p-10 lg:pl-16 lg:pt-[120px] lg:pb-[100px] flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative z-10">
-            <p className="hero-fade font-mono text-[10px] md:text-[11px] font-medium tracking-[0.25em] text-accent2 uppercase flex items-center gap-3 mb-6 opacity-0">
+            <p className="hero-fade font-mono text-[10px] md:text-[11px] font-medium tracking-[0.25em] text-accent2 uppercase flex items-center gap-3 mb-6 ">
               <span className="block w-8 h-[1px] bg-accent2"></span> Elite Engineering Core
             </p>
             <h1 ref={heroLinesRef} className="font-display font-medium text-[clamp(52px,8vw,100px)] leading-[0.95] tracking-tight text-white mb-2" style={{ perspective: "1000px" }}>
@@ -152,13 +152,13 @@ export default function Home() {
               </em></div>
               <div className="overflow-hidden pb-2"><span className="hero-line block">SYSTEMS.</span></div>
             </h1>
-            <p className="hero-fade font-mono text-[11px] md:text-[12px] text-white/50 tracking-[0.1em] mb-10 mt-6 opacity-0 border-l-2 border-white/20 pl-4">
+            <p className="hero-fade font-mono text-[11px] md:text-[12px] text-white/50 tracking-[0.1em] mb-10 mt-6  border-l-2 border-white/20 pl-4">
               Bit <span className="cursor-line bg-white/40"></span> by Bit
             </p>
-            <p className="hero-fade text-[15px] md:text-[16px] text-muted leading-[1.8] max-w-[460px] font-light mb-12 opacity-0">
+            <p className="hero-fade text-[15px] md:text-[16px] text-muted leading-[1.8] max-w-[460px] font-light mb-12 ">
               We engineer mission-critical applications, AI pipelines, and secure digital infrastructure for organizations that operate at scale. Precision constructed, piece by piece.
             </p>
-            <div className="hero-fade flex items-center gap-4 opacity-0 flex-wrap">
+            <div className="hero-fade flex items-center gap-4  flex-wrap">
               <Link href="/what-we-do" className="font-mono text-[11px] md:text-[12px] font-medium tracking-[0.1em] uppercase px-8 py-3.5 bg-white text-void rounded-full transition-all hover:bg-accent2 hover:text-white hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(255,255,255,0.1)]">
                 Explore Capabilities
               </Link>
@@ -197,8 +197,12 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Premium Interactive Logo Marquee */}
-            <div className="hero-fade bg-white/[0.02] py-8 w-screen overflow-hidden opacity-0 shadow-[inset_0_10px_20px_rgba(0,0,0,0.2)] relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] border-y border-white/5">
+            
+          </div>
+        </section>
+
+        {/* Premium Interactive Logo Marquee */}
+            <div className="hero-fade bg-white/[0.02] py-8 w-full overflow-hidden shadow-[inset_0_10px_20px_rgba(0,0,0,0.2)] relative border-y border-white/5">
                <div className="font-mono text-[9px] font-medium tracking-[0.2em] text-white/40 uppercase text-center mb-6">Certified Engineering Partners</div>
                <div className="relative w-full overflow-hidden flex">
                   {/* Glowing, Interactive SVGs */}
@@ -230,8 +234,6 @@ export default function Home() {
                   </div>
                </div>
             </div>
-          </div>
-        </section>
 
         {/* CORE NEXT-GEN ARCHITECTURE */}
         <section className="py-[80px] lg:py-[120px] px-6 lg:px-16 border-y border-white/5 bg-void gsap-reveal">
