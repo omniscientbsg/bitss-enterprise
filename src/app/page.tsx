@@ -90,7 +90,7 @@ export default function Home() {
     gsap.to(stat8Ref.current, { innerHTML: 8, duration: 2, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.9 });
 
     // Elegant Structural Scroll Reveal
-    const sections = gsap.utils.toArray('.gsap-reveal');
+    const sections = gsap.utils.toArray('.');
     sections.forEach((sec: any) => {
       gsap.fromTo(sec, 
         { opacity: 0, y: 40, filter: "blur(4px)" },
@@ -236,7 +236,7 @@ export default function Home() {
             </div>
 
         {/* CORE NEXT-GEN ARCHITECTURE */}
-        <section className="py-[80px] lg:py-[120px] px-6 lg:px-16 border-y border-white/5 bg-void gsap-reveal">
+        <section className="py-[80px] lg:py-[120px] px-6 lg:px-16 border-y border-white/5 bg-void ">
            <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center max-w-[1600px] mx-auto">
              <div className="flex-1 w-full relative z-10">
                 <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8">
@@ -281,7 +281,7 @@ export default function Home() {
         </section>
 
         {/* Global Footprint / Network Geometry (NEW Premium Section) */}
-        <section className="py-[100px] bg-[#05070a] border-b border-white/5 relative overflow-hidden gsap-reveal">
+        <section className="py-[100px] bg-[#05070a] border-b border-white/5 relative overflow-hidden ">
            <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(232,100,42,0.03),transparent_40%),radial-gradient(circle_at_right,rgba(77,127,255,0.03),transparent_40%)] pointer-events-none"></div>
            <div className="max-w-[1600px] mx-auto px-6 lg:px-16 text-center relative z-10">
               <h2 className="font-display font-medium text-[clamp(36px,4vw,56px)] text-white mb-4">Enterprise Grade Scale</h2>
@@ -305,7 +305,7 @@ export default function Home() {
         </section>
 
         {/* CAPABILITIES */}
-        <section id="capabilities" className="py-[120px] px-6 lg:px-16 gsap-reveal max-w-[1800px] mx-auto">
+        <section id="capabilities" className="py-[120px] px-6 lg:px-16  max-w-[1800px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <div className="font-mono text-[10px] font-medium tracking-[0.2em] text-accent2 uppercase flex items-center gap-3 mb-4">
@@ -351,7 +351,7 @@ export default function Home() {
         </section>
 
         {/* DEPLOYMENTS */}
-        <section id="deployments" className="bg-void py-[120px] px-6 lg:px-16 gsap-reveal relative z-20 border-t border-white/5">
+        <section id="deployments" className="bg-void py-[120px] px-6 lg:px-16  relative z-20 border-t border-white/5">
           <div className="flex flex-col mb-16 max-w-[1600px] mx-auto">
             <div className="font-mono text-[10px] font-medium tracking-[0.2em] text-accent uppercase flex items-center gap-3 mb-4">
               <span className="block w-6 h-[1px] bg-accent"></span> Production Results
@@ -419,7 +419,7 @@ export default function Home() {
         </section>
 
         {/* Insights & Vision Pipeline (NEW Premium Carousel) */}
-        <section className="py-[100px] border-t border-white/5 bg-void relative overflow-hidden gsap-reveal">
+        <section className="py-[100px] border-t border-white/5 bg-void relative overflow-hidden ">
            <div className="max-w-[1600px] mx-auto px-6 lg:px-16 mb-12">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                  <div>
