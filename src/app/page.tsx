@@ -206,9 +206,9 @@ export default function Home() {
                <div className="font-mono text-[9px] font-medium tracking-[0.2em] text-white/40 uppercase text-center mb-6">Certified Engineering Partners</div>
                <div className="relative w-full overflow-hidden flex">
                   {/* Glowing, Interactive SVGs */}
-                  <div className="logo-marquee-track flex whitespace-nowrap items-center w-max [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+                  <div className="logo-marquee-track flex items-center w-max [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
                      {[...Array(4)].map((_, idx) => (
-                        <div key={idx} className="flex items-center space-x-12 md:space-x-24 px-12">
+                        <div key={idx} className="flex items-center space-x-12 md:space-x-24 px-12 shrink-0">
                            {/* Meta (Blue Glow) */}
                            <span className="group flex items-center justify-center relative cursor-crosshair shrink-0">
                               <div className="absolute inset-0 bg-[#0668E1] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
