@@ -354,10 +354,8 @@ export default function Home() {
           
           <div className="flex flex-col border-t border-white/10 max-w-[1600px] mx-auto">
             {[
-              { s: 'Defense Sector', c: 'text-[#e8642a]', t: 'Indian Army Dashboard', d: 'Air-gapped resource and logistics allocation dashboard. Zero-Trust Architecture ensuring data sovereignty and multi-factor defense clearancing.', tags: ['Custom ERP', 'Military Protocol', 'Air-Gapped'], y: '2024' },
-              { s: 'High-Scale D2C', c: 'text-[#4d7fff]', t: 'boAt Infrastructure', d: 'Edge-cached headless checkout flows sustaining tens of thousands of concurrent requests during peak flash sales without degradation.', tags: ['Headless CMS', 'Edge Compute'], y: '2024' },
-              { s: 'Supply Chain', c: 'text-[#8b6fff]', t: 'Kamdhenu Protocol', d: 'Supply chain logistics mapping and predictive analytics framework for real-time procurement intelligence.', tags: ['Predictive Analytics', 'Logistics API'], y: '2023' },
-              { s: 'Enterprise Resource', c: 'text-[#2fd4a0]', t: 'Dunamis Gateway', d: 'Enterprise resource planning replacing legacy server data warehouses with a real-time operational backbone.', tags: ['ERP System', 'Data Migration'], y: '2023' }
+              { s: 'Defense Sector', c: 'text-[#e8642a]', t: '330 BDE HQ Readiness', d: 'Engineered an air-gapped React + Electron operational dashboard for the Indian Army. Built to aggregate and visualize brigade-level metrics including combat manpower, armored vehicle allocation, and overall war readiness.', tags: ['React', 'Electron', 'Defense Protocol'], y: '2024' },
+              { s: 'High-Scale D2C', c: 'text-[#4d7fff]', t: 'boAt Nirvana Ion Launch', d: 'Architected the flagship product launch experience for Imagine Marketing (boAt). Engineered a high-performance interactive frontend featuring cinematic WebGL 3D model reveals driven by complex scroll-linked animation timelines.', tags: ['WebGL', '3D Animation', 'Scroll Architecture'], y: '2023' }
             ].map((dep, i) => (
               <div key={i} className="group relative border-b border-white/5 overflow-hidden cursor-crosshair">
                 <div className="absolute inset-0 bg-white/[0.02] -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0"></div>
@@ -455,8 +453,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
           <span className="font-mono text-[10px] tracking-[0.1em] font-medium text-white/40 uppercase">Ready to Build?</span>
-          <a href="mailto:hello@bitss.in" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white">
-            Initialize Workflow
+          <a href="tel:+918655509976" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full transition-all hover:bg-white/10">+91 86555 09976</a>
+            <a href="mailto:info@bitss.com" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white">
+            info@bitss.com
           </a>
         </div>
       </footer>
