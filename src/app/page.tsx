@@ -88,11 +88,16 @@ export default function Home() {
     gsap.to(stat12Ref.current, { innerHTML: 63, duration: 2.5, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.8 });
     gsap.to(stat0Ref.current, { innerHTML: 7, duration: 1.5, ease: "power2.out", snap: { innerHTML: 1 }, delay: 1 });
     gsap.to(stat8Ref.current, { innerHTML: 8, duration: 2, ease: "power3.out", snap: { innerHTML: 1 }, delay: 0.9 });
+    // Add "+" suffix after counters animate
+    setTimeout(() => {
+      if (stat12Ref.current) stat12Ref.current.nextElementSibling?.classList.remove("opacity-0");
+      if (stat0Ref.current) stat0Ref.current.nextElementSibling?.classList.remove("opacity-0");
+      if (stat8Ref.current) stat8Ref.current.nextElementSibling?.classList.remove("opacity-0");
+    }, 2600);
 
     
 
-    // Logo Marquee Engine
-    gsap.to('.logo-marquee-track', { xPercent: -50, ease: "none", duration: 25, repeat: -1 });
+    // Logo Marquee — using CSS animation instead (seamless, no GSAP glitch)
     
     // Insights Carousel Engine
     if (carouselTrackRef.current) {
@@ -168,18 +173,18 @@ export default function Home() {
                   <div className="bg-void px-8 py-10 relative transition-colors hover:bg-white/[0.02] group">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent2/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 flex items-start relative z-10">
-                      <span ref={stat12Ref}>0</span><span className="text-accent2 text-[24px] md:text-[32px] align-super leading-none mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">+</span>
+                      <span ref={stat12Ref}>0</span><span className="text-accent2 text-[24px] md:text-[32px] align-super leading-none mt-2">+</span>
                     </div>
                     <div className="font-mono text-[10px] md:text-[11px] tracking-[0.1em] font-medium text-white/50 uppercase relative z-10 group-hover:text-white transition-colors">Enterprise Deployments</div>
                   </div>
                   <div className="bg-void px-8 py-10 relative transition-colors hover:bg-white/[0.02] group">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 relative z-10"><span ref={stat0Ref}>7</span><span className="text-accent text-[24px] md:text-[32px] align-super leading-none mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">+</span></div>
+                    <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 flex items-start relative z-10"><span ref={stat0Ref}>0</span><span className="text-accent text-[24px] md:text-[32px] align-super leading-none mt-2">+</span></div>
                     <div className="font-mono text-[10px] md:text-[11px] tracking-[0.1em] font-medium text-white/50 uppercase relative z-10 group-hover:text-white transition-colors">Years Experience</div>
                   </div>
                   <div className="bg-void px-8 py-10 relative transition-colors hover:bg-white/[0.02] group">
                     <div className="absolute inset-0 bg-gradient-to-tl from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 relative z-10"><span ref={stat8Ref}>0</span></div>
+                    <div className="font-display font-medium text-[48px] md:text-[64px] leading-none text-white mb-2 flex items-start relative z-10"><span ref={stat8Ref}>0</span><span className="text-white text-[24px] md:text-[32px] align-super leading-none mt-2">+</span></div>
                     <div className="font-mono text-[10px] md:text-[11px] tracking-[0.1em] font-medium text-white/50 uppercase relative z-10 group-hover:text-white transition-colors">Capability Domains</div>
                   </div>
                   <div className="bg-void px-8 py-10 relative transition-colors hover:bg-white/[0.02] group overflow-hidden">
@@ -197,31 +202,25 @@ export default function Home() {
         {/* Premium Interactive Logo Marquee */}
             <div className="hero-fade bg-white/[0.02] py-8 w-full overflow-hidden shadow-[inset_0_10px_20px_rgba(0,0,0,0.2)] relative border-y border-white/5">
                <div className="font-mono text-[9px] font-medium tracking-[0.2em] text-white/40 uppercase text-center mb-6">Certified Engineering Partners</div>
-               <div className="relative w-full overflow-hidden flex">
+               <div className="marquee-wrapper w-full flex">
                   {/* Glowing, Interactive SVGs */}
-                  <div className="logo-marquee-track flex items-center w-max [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-                     {[...Array(4)].map((_, idx) => (
-                        <div key={idx} className="flex items-center space-x-12 md:space-x-24 px-12 shrink-0">
-                           {/* Meta (Blue Glow) */}
-                           <span className="group flex items-center justify-center relative cursor-crosshair shrink-0">
-                              <div className="absolute inset-0 bg-[#0668E1] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-6 md:h-8 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
-                           </span>
-                           {/* Shopify (Green Glow) */}
-                           <span className="group flex items-center justify-center relative cursor-crosshair shrink-0">
-                              <div className="absolute inset-0 bg-[#95bf47] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" className="h-7 md:h-9 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
-                           </span>
-                           {/* Hostinger (Purple Glow) */}
-                           <span className="group flex items-center justify-center relative cursor-crosshair shrink-0">
-                              <div className="absolute inset-0 bg-[#6c5b7b] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="Hostinger" className="h-6 md:h-8 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
-                           </span>
-                           {/* Razorpay (Blue/Orange Glow) */}
-                           <span className="group flex items-center justify-center relative cursor-crosshair shrink-0">
-                              <div className="absolute inset-0 bg-[#0288D1] blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-                              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg" alt="Razorpay" className="h-6 md:h-8 w-auto flex-shrink-0 brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10" />
-                           </span>
+                     {/* Seamless CSS-animated marquee — duplicated set for seamless loop */}
+                  <div className="marquee-infinite items-center">
+                     {[...Array(2)].map((_, setIdx) => (
+                        <div key={setIdx} className="flex items-center space-x-12 md:space-x-24 px-12 shrink-0">
+                           {[
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", alt: "Meta", glow: "#0668E1", h: "h-6 md:h-8" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg", alt: "Shopify", glow: "#95bf47", h: "h-7 md:h-9" },
+                             { src: "https://cdn.worldvectorlogo.com/logos/hostinger.svg", alt: "Hostinger", glow: "#673ab7", h: "h-6 md:h-8" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg", alt: "Razorpay", glow: "#0288D1", h: "h-6 md:h-8" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", alt: "AWS", glow: "#FF9900", h: "h-6 md:h-8" },
+                             { src: "https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg", alt: "Firebase", glow: "#FFA000", h: "h-6 md:h-8" },
+                           ].map((logo) => (
+                              <span key={logo.alt} className="group flex items-center justify-center relative cursor-crosshair shrink-0">
+                                 <div className="absolute inset-0 blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full" style={{ backgroundColor: logo.glow }}></div>
+                                 <img src={logo.src} alt={logo.alt} className={`${logo.h} w-auto flex-shrink-0 brightness-0 invert opacity-35 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10`} />
+                              </span>
+                           ))}
                         </div>
                      ))}
                   </div>
@@ -288,8 +287,8 @@ export default function Home() {
                     <div className="font-body text-[14px] text-white/60">Global edge-cached response latency.</div>
                  </div>
                  <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:bg-white/[0.04] transition-colors duration-300">
-                    <div className="font-display text-[48px] text-white mb-2">SOC2</div>
-                    <div className="font-body text-[14px] text-white/60">Compliant data warehousing and deep isolation protocols.</div>
+                    <div className="font-display text-[48px] text-white mb-2">0.00<span className="text-[28px] text-white/50">s</span></div>
+                    <div className="font-body text-[14px] text-white/60">Downtime on critical deployments. Air-gapped resilience built in.</div>
                  </div>
               </div>
            </div>
@@ -445,6 +444,101 @@ export default function Home() {
         </section>
       </main>
       
+      {/* TESTIMONIALS */}
+      <section className="py-[120px] px-6 lg:px-16 bg-[#020305] border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(77,127,255,0.04),transparent_60%)] pointer-events-none"></div>
+        <div className="max-w-[1600px] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <div className="font-mono text-[10px] font-medium tracking-[0.2em] text-accent2 uppercase flex items-center gap-3 mb-4">
+                <span className="block w-6 h-[1px] bg-accent2"></span> Client Intelligence
+              </div>
+              <h2 className="font-display font-medium text-[42px] md:text-[56px] text-white leading-none">What they said.</h2>
+            </div>
+            <p className="font-mono text-[11px] text-white/30 tracking-[0.05em] max-w-[300px]">63 deployments. 7 years. These are the people we built for.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                quote: "War is about timing, and what Baljinder and team built makes the decision making clear. Next time we go to war, we know who made the situation better for us.",
+                author: "BDE Colonel",
+                role: "330 Brigade HQ, Indian Army",
+                tag: "Defense",
+                color: "#e8642a",
+              },
+              {
+                quote: "Shifting from a simple WordPress agency build to a full-fledged headless e-commerce was a tough decision. Baljinder and team made it easy — and fruitfully increased revenue 10 times.",
+                author: "Founder",
+                role: "Snowy Glow",
+                tag: "Headless Commerce",
+                color: "#ec4899",
+              },
+              {
+                quote: "GeM SaaS solved my biggest headache — filling tenders. Now I am prepared for what I already do, not chasing paperwork.",
+                author: "Founder",
+                role: "Archana Associates",
+                tag: "Enterprise SaaS",
+                color: "#2fd4a0",
+              },
+              {
+                quote: "We trust Baljinder and team for everything we need in Real Estate technology. Even if nobody can pull it off, we know they will.",
+                author: "Founder",
+                role: "Dunamis Real Estate",
+                tag: "Real Estate Tech",
+                color: "#8b5cf6",
+              },
+              {
+                quote: "Project management and sales became such an easy journey after we got what we wanted — and not some generic CRM.",
+                author: "Founder",
+                role: "Kaamdhenu",
+                tag: "CRM & Operations",
+                color: "#4d7fff",
+              },
+              {
+                quote: "The boAt Nirvana Ion launch page was unlike anything we had seen from an Indian dev team. The scroll animations and 3D model reveal set a new bar for our product launches.",
+                author: "Digital Lead",
+                role: "Imagine Marketing (boAt)",
+                tag: "High-Scale D2C",
+                color: "#e8642a",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="relative bg-white/[0.02] border border-white/5 rounded-2xl p-8 flex flex-col gap-6 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 group"
+              >
+                {/* Accent top line */}
+                <div className="h-[1px] w-12 rounded-full" style={{ backgroundColor: t.color }}></div>
+
+                {/* Quote mark */}
+                <div className="font-display text-[56px] leading-none font-medium text-white/5 absolute top-6 right-8 select-none group-hover:text-white/10 transition-colors">"</div>
+
+                <p className="text-[15px] text-white/70 font-light leading-[1.8] relative z-10 flex-1">"{t.quote}"</p>
+
+                <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold font-mono shrink-0"
+                    style={{ backgroundColor: `${t.color}20`, color: t.color, border: `1px solid ${t.color}40` }}
+                  >
+                    {t.author[0]}
+                  </div>
+                  <div>
+                    <div className="font-mono text-[12px] font-semibold text-white">{t.author}</div>
+                    <div className="font-mono text-[10px] text-white/40 uppercase tracking-[0.1em]">{t.role}</div>
+                  </div>
+                  <div
+                    className="ml-auto font-mono text-[9px] uppercase tracking-[0.1em] px-3 py-1 rounded-full border"
+                    style={{ color: t.color, borderColor: `${t.color}30`, backgroundColor: `${t.color}10` }}
+                  >
+                    {t.tag}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRE-FOOTER CTA */}
       <section id="engage" className="py-[100px] px-6 lg:px-16 bg-[#040608] border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center text-center w-full z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent2/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -454,9 +548,12 @@ export default function Home() {
           <a href="tel:+918655509976" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full transition-all hover:bg-white/10 w-full sm:w-auto text-center">
             +91 86555 09976
           </a>
-          <a href="mailto:info@bitss.com" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white w-full sm:w-auto text-center">
-            info@bitss.com
-          </a>
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
+            className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white w-full sm:w-auto text-center"
+          >
+            Start Your Project →
+          </button>
         </div>
       </section>
 
@@ -496,7 +593,7 @@ export default function Home() {
         
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 max-w-[1600px] mx-auto">
           <div className="font-mono text-[10px] tracking-[0.1em] font-medium text-white/30 uppercase text-center md:text-left">
-            &copy; 2022 BITSS. All rights reserved.
+            &copy; 2022 BITSS. All rights reserved. Engineered in India.
           </div>
           <div className="flex gap-6 font-mono text-[10px] tracking-[0.1em] font-medium text-white/30 uppercase">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
