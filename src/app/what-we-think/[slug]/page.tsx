@@ -1,22 +1,23 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import EngageButton from "@/components/EngageButton";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug } from "@/lib/articles";
-import { use } from "react";
 
-export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
-  const article = getArticleBySlug(slug);
+// Required for static export — pre-renders a page for every slug at build time
+export function generateStaticParams() {
+  return articles.map((article) => ({ slug: article.slug }));
+}
+
+export default function ArticlePage({ params }: { params: { slug: string } }) {
+  const article = getArticleBySlug(params.slug);
   if (!article) notFound();
 
   return (
     <div className="bg-[#020305] font-body text-text relative min-h-screen overflow-x-hidden selection:bg-accent/30 selection:text-white">
       <Navbar />
 
-      {/* Hero */}
       <section className="pt-[120px] lg:pt-[180px] px-6 lg:px-16 pb-16 max-w-[900px] mx-auto relative z-10">
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 mb-10">
@@ -26,7 +27,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
         </div>
 
         {/* Tag & Date */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex flex-wrap items-center gap-4 mb-6">
           <span className={`font-mono text-[10px] uppercase tracking-[0.12em] px-3 py-1 rounded-full border ${article.accentBorder} ${article.accentBg} ${article.accent}`}>
             {article.tag}
           </span>
@@ -52,7 +53,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
         </div>
 
         {/* Article Body */}
-        <article className="prose prose-invert max-w-none">
+        <article className="max-w-none">
           {article.body.map((block, idx) => {
             if (block.type === "heading") {
               return (
@@ -63,7 +64,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
             }
             if (block.type === "subheading") {
               return (
-                <h3 key={idx} className="font-mono text-[12px] uppercase tracking-[0.15em] text-white/50 mt-10 mb-4">
+                <h3 key={idx} className="font-mono text-[12px] uppercase tracking-[0.15em] text-white/40 mt-10 mb-4">
                   {block.content as string}
                 </h3>
               );
@@ -79,7 +80,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
               return (
                 <blockquote key={idx} className="border-l-2 border-white/20 pl-6 my-10">
                   <p className="text-[18px] md:text-[22px] font-display font-medium text-white leading-[1.5] italic">
-                    "{block.content as string}"
+                    &ldquo;{block.content as string}&rdquo;
                   </p>
                 </blockquote>
               );
@@ -100,7 +101,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
           })}
         </article>
 
-        {/* Author footer line */}
+        {/* Author footer */}
         <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-mono text-[11px] font-bold text-white uppercase">
@@ -115,12 +116,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
             <Link href="/what-we-think" className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30 hover:text-white transition-colors border border-white/10 rounded-full px-5 py-2 hover:bg-white/5">
               ← All Articles
             </Link>
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
-              className="font-mono text-[10px] uppercase tracking-[0.1em] font-bold text-white border border-white/20 rounded-full px-5 py-2 hover:bg-white hover:text-void transition-all"
-            >
-              Work With Us →
-            </button>
+            <EngageButton />
           </div>
         </div>
 
@@ -128,7 +124,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
         <div className="mt-20">
           <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/30 mb-8">More from the Pipeline</h3>
           <div className="flex flex-col gap-5">
-            {articles.filter((a) => a.slug !== article.slug).map((a) => (
+            {articles.filter((a) => a.slug !== article.slug).slice(0, 3).map((a) => (
               <Link key={a.slug} href={`/what-we-think/${a.slug}`}
                 className="group flex items-center justify-between gap-8 p-5 rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300">
                 <div>
