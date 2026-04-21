@@ -80,6 +80,42 @@
     animation: ticker 25s linear infinite;
   }
 
+  /* Horizontal scan line for Digital Sovereignty */
+  @keyframes scan {
+    0% { transform: translateY(0px); opacity: 0; }
+    4% { opacity: 0.8; }
+    96% { opacity: 0.4; }
+    100% { transform: translateY(600px); opacity: 0; }
+  }
+
+  /* Float animation for HUD panels */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* Shimmer sweep */
+  @keyframes shimmer-sweep {
+    0% { transform: translateX(-100%) skewX(-15deg); }
+    100% { transform: translateX(300%) skewX(-15deg); }
+  }
+
+  /* Gradient mesh shift */
+  @keyframes mesh {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Conic gradient border spin — Chrome/Edge only */
+  @property --conic-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes conic-spin {
+    to { --conic-angle: 360deg; }
+  }
+
   /* Seamless infinite marquee */
   @keyframes marquee-infinite {
     0% { transform: translateX(0); }
@@ -98,5 +134,54 @@
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  /* Card gradient animated backgrounds */
+  .card-bg-mesh {
+    background: linear-gradient(135deg, #0b0e14 0%, #0d1420 50%, #0b0e14 100%);
+    background-size: 200% 200%;
+    animation: mesh 8s ease infinite;
+  }
+  .card-bg-mesh-orange {
+    background: linear-gradient(135deg, #0e0c08 0%, #14100a 50%, #0e0c08 100%);
+    background-size: 200% 200%;
+    animation: mesh 10s ease infinite;
+  }
+  .card-bg-mesh-green {
+    background: linear-gradient(135deg, #080e0c 0%, #0a1410 50%, #080e0c 100%);
+    background-size: 200% 200%;
+    animation: mesh 12s ease infinite;
+  }
+
+  /* Shimmer card overlay */
+  .shimmer-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+    animation: shimmer-sweep 5s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Noise texture overlay (CSS only) */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 0;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  .animate-scan {
+    animation: scan 3s linear infinite;
   }
 }

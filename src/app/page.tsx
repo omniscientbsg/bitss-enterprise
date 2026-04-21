@@ -133,8 +133,14 @@ export default function Home() {
       <main className="flex-1 w-full pt-[72px]">
         {/* PREMIUM HERO SECTION */}
         <section className="min-h-0 lg:min-h-[85vh] flex flex-col lg:flex-row relative overflow-hidden w-full">
-          {/* Subtle geometric premium noise */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#4d7fff15,transparent_50%)] pointer-events-none z-0"></div>
+          {/* Background: deep space image + overlays */}
+          <img
+            src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1800&q=70&auto=format&fit=crop"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.04] pointer-events-none select-none"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#4d7fff12,transparent_50%)] pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none z-0 opacity-60"></div>
 
           {/* Left Node */}
           <div className="w-full lg:w-[55%] p-6 py-12 md:p-10 lg:pl-16 lg:pt-[120px] lg:pb-[100px] flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative z-10">
@@ -227,9 +233,13 @@ export default function Home() {
                </div>
             </div>
 
-        {/* CORE NEXT-GEN ARCHITECTURE */}
-        <section className="py-[80px] lg:py-[120px] px-6 lg:px-16 border-y border-white/5 bg-void ">
-           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center max-w-[1600px] mx-auto">
+        {/* CORE NEXT-GEN ARCHITECTURE — Digital Sovereignty */}
+        <section className="py-[80px] lg:py-[140px] px-6 lg:px-16 border-y border-white/5 bg-void relative overflow-hidden">
+          {/* Background texture */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(232,100,42,0.04),transparent_50%),radial-gradient(ellipse_at_top_right,rgba(77,127,255,0.04),transparent_50%)] pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none opacity-40"></div>
+
+           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center max-w-[1600px] mx-auto">
              <div className="flex-1 w-full relative z-10">
                 <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
@@ -238,57 +248,197 @@ export default function Home() {
                <h2 className="font-display font-medium text-[clamp(42px,5vw,64px)] tracking-tight text-white leading-[1] mb-6">
                  Engineered for industries that cannot afford to fail.
                </h2>
-               <p className="text-[15px] text-white/60 font-light leading-[1.8] max-w-[500px]">
+               <p className="text-[15px] text-white/60 font-light leading-[1.8] max-w-[500px] mb-10">
                  When data integrity is a matter of compliance, off-the-shelf software is a liability. We deploy completely isolated architectures using custom zero-trust protocols, perfect for Healthcare, Finance, and Enterprise Defense operations.
                </p>
+               {/* HUD stat pills */}
+               <div className="flex flex-col gap-3">
+                 {[
+                   { label: "Zero-Trust Protocol Layer", value: "ACTIVE", color: "#4d7fff" },
+                   { label: "Air-Gapped Isolation", value: "ENABLED", color: "#2fd4a0" },
+                   { label: "End-to-End Encryption", value: "AES-256", color: "#e8642a" },
+                 ].map((item) => (
+                   <div key={item.label} className="flex items-center gap-4 px-5 py-3 rounded-xl bg-white/[0.02] border border-white/5 w-fit">
+                     <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: item.color }}></span>
+                     <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/40">{item.label}</span>
+                     <span className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold ml-auto" style={{ color: item.color }}>{item.value}</span>
+                   </div>
+                 ))}
+               </div>
              </div>
-             <div className="flex-1 w-full relative h-[400px] lg:h-[500px] bg-[#020508] border border-white/5 rounded-2xl overflow-hidden flex items-center justify-center isolate group shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-                {/* Stunning Premium Matrix Net */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(77,127,255,0.05),transparent_70%)]"></div>
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30 transform -skew-y-[6deg] scale-[1.5] origin-center animate-[spin_120s_linear_infinite_reverse]"></div>
-                
-                <div className="relative z-10 w-32 h-32 lg:w-48 lg:h-48 border border-accent2/30 rounded-full flex items-center justify-center shadow-[inset_0_0_40px_rgba(77,127,255,0.15)] group-hover:border-accent2/60 transition-colors duration-1000">
-                   <div className="absolute w-48 h-48 lg:w-[320px] lg:h-[320px] border border-white/5 rounded-full animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                   
-                   <div className="absolute w-64 h-64 lg:w-[400px] lg:h-[400px] border border-dashed border-white/5 rounded-full animate-[spin_20s_linear_infinite]"></div>
 
-                   <div className="absolute w-56 h-56 lg:w-72 lg:h-72 animate-[spin_12s_linear_infinite]">
-                      <div className="absolute top-0 left-1/2 w-3 h-3 -ml-1.5 bg-accent2 rounded-full shadow-[0_0_15px_rgba(77,127,255,1)]"></div>
+             {/* 3D HUD Visual — Ultra Realistic */}
+             <div className="flex-1 w-full relative h-[480px] lg:h-[560px] rounded-2xl overflow-hidden isolate group shadow-[0_40px_100px_rgba(0,0,0,0.8)] border border-white/5">
+               {/* Real 3D space background — deep space photo */}
+               <img
+                 src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80&auto=format&fit=crop"
+                 alt="Deep space architecture"
+                 className="absolute inset-0 w-full h-full object-cover opacity-20 scale-110 group-hover:scale-105 transition-transform duration-[3000ms] ease-out"
+               />
+
+               {/* Deep color gradient overlay */}
+               <div className="absolute inset-0 bg-gradient-to-br from-[#020818] via-[#030c1a] to-[#020508]"></div>
+               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(77,127,255,0.12),transparent_65%)]"></div>
+
+               {/* Animated horizontal scan line */}
+               <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent2/60 to-transparent animate-scan z-10"></div>
+
+               {/* Grid overlay */}
+               <div className="absolute inset-0 bg-[linear-gradient(rgba(77,127,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(77,127,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+               {/* Corner brackets — HUD style */}
+               {[
+                 "top-4 left-4 border-l border-t",
+                 "top-4 right-4 border-r border-t",
+                 "bottom-4 left-4 border-l border-b",
+                 "bottom-4 right-4 border-r border-b",
+               ].map((cls, i) => (
+                 <div key={i} className={`absolute w-6 h-6 ${cls} border-accent2/40 z-20`}></div>
+               ))}
+
+               {/* Central orb — 3D sphere illusion */}
+               <div className="absolute inset-0 flex items-center justify-center z-10">
+                 <div className="relative">
+                   {/* Outer atmosphere glow */}
+                   <div className="absolute inset-0 rounded-full bg-accent2/5 blur-[40px] scale-[2.5] animate-pulse"></div>
+
+                   {/* Orbit rings */}
+                   {[
+                     { size: "w-[300px] h-[300px]", rot: "rotateX(75deg)", dur: "20s", op: "0.15" },
+                     { size: "w-[240px] h-[240px]", rot: "rotateX(70deg) rotateZ(60deg)", dur: "14s", op: "0.1" },
+                     { size: "w-[180px] h-[180px]", rot: "rotateX(65deg) rotateZ(30deg)", dur: "8s", op: "0.2" },
+                   ].map((ring, i) => (
+                     <div
+                       key={i}
+                       className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${ring.size} border rounded-full animate-[spin_${ring.dur}_linear_infinite]`}
+                       style={{
+                         transform: `translate(-50%, -50%) ${ring.rot}`,
+                         borderColor: `rgba(77,127,255,${ring.op})`,
+                         animation: `spin ${ring.dur} linear infinite`,
+                       }}
+                     ></div>
+                   ))}
+
+                   {/* Orbiting dot 1 */}
+                   <div className="absolute top-1/2 left-1/2 w-[240px] h-[240px] -translate-x-1/2 -translate-y-1/2 animate-[spin_14s_linear_infinite]">
+                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-accent2 rounded-full shadow-[0_0_20px_rgba(77,127,255,1),0_0_40px_rgba(77,127,255,0.5)]"></div>
                    </div>
 
-                   <div className="w-16 h-16 lg:w-20 lg:h-20 bg-void border border-accent2/20 rounded-2xl flex items-center justify-center relative overflow-hidden backdrop-blur-md">
-                      <div className="absolute inset-0 bg-accent2/10 animate-pulse"></div>
-                      <svg className="w-16 h-16 text-accent2 opacity-80 animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1"><circle cx="50" cy="50" r="45" strokeDasharray="4 4" /><ellipse cx="50" cy="50" rx="45" ry="15" /><ellipse cx="50" cy="50" rx="15" ry="45" /><path d="M 5 50 H 95 M 50 5 V 95" strokeOpacity="0.5" /></svg>
+                   {/* Orbiting dot 2 */}
+                   <div className="absolute top-1/2 left-1/2 w-[180px] h-[180px] -translate-x-1/2 -translate-y-1/2 animate-[spin_8s_linear_infinite_reverse]">
+                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-accent rounded-full shadow-[0_0_16px_rgba(232,100,42,1),0_0_32px_rgba(232,100,42,0.5)]"></div>
                    </div>
-                </div>
 
-                <div className="absolute bottom-6 left-6 font-mono text-[10px] font-medium uppercase tracking-[0.1em] text-white/50 bg-[#020508]/60 px-4 py-2 border border-white/10 rounded-full flex items-center gap-3 backdrop-blur-md">
-                  <span className="w-2 h-2 bg-accent2 rounded-full animate-pulse shadow-[0_0_5px_rgba(77,127,255,1)]"></span>
-                  Node Secure Isolation active
-                </div>
+                   {/* Core sphere */}
+                   <div className="relative w-[100px] h-[100px] lg:w-[120px] lg:h-[120px] rounded-full"
+                     style={{
+                       background: "radial-gradient(circle at 35% 35%, rgba(77,127,255,0.5) 0%, rgba(10,20,60,0.9) 50%, rgba(5,10,30,1) 100%)",
+                       boxShadow: "0 0 60px rgba(77,127,255,0.4), inset 0 0 40px rgba(77,127,255,0.2), 0 0 120px rgba(77,127,255,0.1)"
+                     }}>
+                     {/* Specular highlight */}
+                     <div className="absolute top-[15%] left-[20%] w-[30%] h-[20%] rounded-full bg-white/20 blur-[4px]"></div>
+                     {/* BITSS grid on sphere */}
+                     <div className="absolute inset-0 flex items-center justify-center">
+                       <div className="w-7 h-7 grid grid-cols-2 gap-[2px] opacity-80">
+                         <span className="bg-accent rounded-[1px]"></span>
+                         <span className="bg-accent2 rounded-[1px]"></span>
+                         <span className="bg-accent2 rounded-[1px]"></span>
+                         <span className="bg-accent rounded-[1px]"></span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               {/* Floating HUD panels */}
+               <div className="absolute top-8 left-8 z-20 animate-float-slow" style={{ animationDelay: '0s' }}>
+                 <div className="bg-[#030a1a]/80 backdrop-blur-md border border-accent2/20 rounded-lg px-4 py-3">
+                   <div className="font-mono text-[8px] text-accent2/60 uppercase tracking-[0.15em] mb-1">ISOLATION STATUS</div>
+                   <div className="font-mono text-[12px] text-accent2 font-bold flex items-center gap-2">
+                     <span className="w-1.5 h-1.5 rounded-full bg-accent2 animate-pulse"></span>
+                     ACTIVE
+                   </div>
+                 </div>
+               </div>
+
+               <div className="absolute top-8 right-8 z-20 animate-float-slow" style={{ animationDelay: '2s' }}>
+                 <div className="bg-[#030a1a]/80 backdrop-blur-md border border-accent/20 rounded-lg px-4 py-3">
+                   <div className="font-mono text-[8px] text-accent/60 uppercase tracking-[0.15em] mb-1">THREAT LEVEL</div>
+                   <div className="font-mono text-[12px] text-accent font-bold flex items-center gap-2">
+                     <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                     ZERO
+                   </div>
+                 </div>
+               </div>
+
+               <div className="absolute bottom-8 right-8 z-20 animate-float-slow" style={{ animationDelay: '4s' }}>
+                 <div className="bg-[#030a1a]/80 backdrop-blur-md border border-[#2fd4a0]/20 rounded-lg px-4 py-3">
+                   <div className="font-mono text-[8px] text-[#2fd4a0]/60 uppercase tracking-[0.15em] mb-1">NODES SECURED</div>
+                   <div className="font-mono text-[12px] text-[#2fd4a0] font-bold">63 / 63</div>
+                 </div>
+               </div>
+
+               {/* Bottom status bar */}
+               <div className="absolute bottom-6 left-6 font-mono text-[9px] font-medium uppercase tracking-[0.15em] text-white/40 bg-[#020508]/70 px-4 py-2 border border-white/10 rounded-full flex items-center gap-3 backdrop-blur-md z-20">
+                 <span className="w-2 h-2 bg-accent2 rounded-full animate-pulse shadow-[0_0_8px_rgba(77,127,255,1)]"></span>
+                 BITSS Zero-Trust Node — Isolation Active
+               </div>
              </div>
            </div>
         </section>
 
-        {/* Global Footprint / Network Geometry (NEW Premium Section) */}
-        <section className="py-[100px] bg-[#05070a] border-b border-white/5 relative overflow-hidden ">
+        {/* Global Footprint / Network Geometry */}
+        <section className="py-[100px] bg-[#05070a] border-b border-white/5 relative overflow-hidden">
            <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(232,100,42,0.03),transparent_40%),radial-gradient(circle_at_right,rgba(77,127,255,0.03),transparent_40%)] pointer-events-none"></div>
+           {/* Blueprint grid */}
+           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none"></div>
+
            <div className="max-w-[1600px] mx-auto px-6 lg:px-16 text-center relative z-10">
               <h2 className="font-display font-medium text-[clamp(36px,4vw,56px)] text-white mb-4">Enterprise Grade Scale</h2>
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/40 mb-16">Global Infrastructure Management</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/40 mb-16">Global Infrastructure Benchmarks</p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:bg-white/[0.04] transition-colors duration-300">
-                    <div className="font-display text-[48px] text-accent mb-2">99.9%</div>
-                    <div className="font-body text-[14px] text-white/60">Uptime SLA across proprietary distributed networks.</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                 {/* Card 1 — orange gradient */}
+                 <div className="relative card-bg-mesh-orange border border-accent/10 rounded-2xl p-10 overflow-hidden group hover:border-accent/30 transition-all duration-500 shimmer-card noise-overlay">
+                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(232,100,42,0.15),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
+                   <div className="relative z-10">
+                     <div className="font-display text-[64px] leading-none text-accent mb-3 drop-shadow-[0_0_20px_rgba(232,100,42,0.4)]">99.9%</div>
+                     <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-accent/60 mb-3">Uptime SLA</div>
+                     <div className="font-body text-[13px] text-white/50 leading-relaxed">Across proprietary distributed networks. No single point of failure.</div>
+                   </div>
+                   {/* Decorative corner element */}
+                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#e8642a" strokeWidth="1" strokeDasharray="3 3"/><circle cx="24" cy="24" r="12" stroke="#e8642a" strokeWidth="1"/></svg>
+                   </div>
                  </div>
-                 <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:bg-white/[0.04] transition-colors duration-300">
-                    <div className="font-display text-[48px] text-accent2 mb-2">40ms</div>
-                    <div className="font-body text-[14px] text-white/60">Global edge-cached response latency.</div>
+
+                 {/* Card 2 — blue gradient */}
+                 <div className="relative card-bg-mesh border border-accent2/10 rounded-2xl p-10 overflow-hidden group hover:border-accent2/30 transition-all duration-500 shimmer-card noise-overlay">
+                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(77,127,255,0.15),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent2/40 to-transparent"></div>
+                   <div className="relative z-10">
+                     <div className="font-display text-[64px] leading-none text-accent2 mb-3 drop-shadow-[0_0_20px_rgba(77,127,255,0.4)]">40ms</div>
+                     <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-accent2/60 mb-3">Response Latency</div>
+                     <div className="font-body text-[13px] text-white/50 leading-relaxed">Global edge-cached response. Optimized for concurrent enterprise load.</div>
+                   </div>
+                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="40" height="40" stroke="#4d7fff" strokeWidth="1" strokeDasharray="3 3"/><rect x="14" y="14" width="20" height="20" stroke="#4d7fff" strokeWidth="1"/></svg>
+                   </div>
                  </div>
-                 <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:bg-white/[0.04] transition-colors duration-300">
-                    <div className="font-display text-[48px] text-white mb-2">0.00<span className="text-[28px] text-white/50">s</span></div>
-                    <div className="font-body text-[14px] text-white/60">Downtime on critical deployments. Air-gapped resilience built in.</div>
+
+                 {/* Card 3 — green gradient */}
+                 <div className="relative card-bg-mesh-green border border-[#2fd4a0]/10 rounded-2xl p-10 overflow-hidden group hover:border-[#2fd4a0]/30 transition-all duration-500 shimmer-card noise-overlay">
+                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(47,212,160,0.15),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2fd4a0]/40 to-transparent"></div>
+                   <div className="relative z-10">
+                     <div className="font-display text-[64px] leading-none text-[#2fd4a0] mb-3 drop-shadow-[0_0_20px_rgba(47,212,160,0.4)]">0.00<span className="text-[36px] text-[#2fd4a0]/50">s</span></div>
+                     <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#2fd4a0]/60 mb-3">Recorded Downtime</div>
+                     <div className="font-body text-[13px] text-white/50 leading-relaxed">On critical deployments. Air-gapped resilience built in from day one.</div>
+                   </div>
+                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><polygon points="24,4 44,44 4,44" stroke="#2fd4a0" strokeWidth="1" strokeDasharray="3 3" fill="none"/><polygon points="24,18 36,40 12,40" stroke="#2fd4a0" strokeWidth="1" fill="none"/></svg>
+                   </div>
                  </div>
               </div>
            </div>
@@ -319,23 +469,41 @@ export default function Home() {
                 { num: '06', title: 'CRM & ERP Solutions', desc: 'Centralized platforms to manage sales funnels, automate leads, and streamline business operations across all departments.', i: Icons.analytics },
                 { num: '07', title: 'B2B Client Portals', desc: 'Secure, high-conversion hubs allowing partners and clients to plug directly into your proprietary databases and workflows.', i: Icons.identity },
                 { num: '08', title: 'Legacy Modernization', desc: 'Transitioning brittle, outdated software monoliths into high-speed, scalable Next.js and React Native architecture.', i: Icons.edge },
-              ].map((cap, i) => (
-                <div key={i} className="bg-[#0b0e14] p-8 lg:p-10 relative overflow-hidden group hover:bg-[#11151e] transition-colors duration-500 cursor-crosshair">
+              ].map((cap, i) => {
+                const gradients = [
+                  "from-accent2/5 to-transparent",
+                  "from-accent/5 to-transparent",
+                  "from-[#8b5cf6]/5 to-transparent",
+                  "from-[#2fd4a0]/5 to-transparent",
+                  "from-accent/5 to-transparent",
+                  "from-accent2/5 to-transparent",
+                  "from-[#ec4899]/5 to-transparent",
+                  "from-[#2fd4a0]/5 to-transparent",
+                ];
+                const glowColors = ["rgba(77,127,255,0.15)","rgba(232,100,42,0.15)","rgba(139,92,246,0.15)","rgba(47,212,160,0.15)","rgba(232,100,42,0.15)","rgba(77,127,255,0.15)","rgba(236,72,153,0.15)","rgba(47,212,160,0.15)"];
+                return (
+                <div key={i} className="card-bg-mesh p-8 lg:p-10 relative overflow-hidden group hover:bg-[#11151e] transition-all duration-500 cursor-crosshair shimmer-card noise-overlay">
+                  {/* Animated gradient background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${gradients[i]} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
+                  {/* Subtle top border accent */}
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-white/20 transition-all duration-500"></div>
+
                   <div className="flex flex-col h-full relative z-10 w-full">
                      <div className="flex items-center justify-between mb-10 w-full">
-                       <div className="p-3 bg-void rounded-xl border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-500 will-change-transform">
+                       <div className="p-3 bg-void rounded-xl border border-white/5 shadow-lg group-hover:scale-110 group-hover:border-white/10 transition-all duration-500 will-change-transform">
                           <cap.i />
                        </div>
-                       <span className="font-mono text-[11px] font-medium tracking-[0.1em] text-white/30 group-hover:text-accent2 transition-colors">{cap.num}</span>
+                       <span className="font-mono text-[11px] font-medium tracking-[0.1em] text-white/20 group-hover:text-accent2 transition-colors">{cap.num}</span>
                      </div>
-                     <h3 className="font-display font-medium text-[24px] lg:text-[28px] tracking-tight text-white mb-4 leading-[1.1]">{cap.title}</h3>
-                     <p className="text-[14px] text-white/50 font-light leading-relaxed">{cap.desc}</p>
+                     <h3 className="font-display font-medium text-[24px] lg:text-[28px] tracking-tight text-white mb-4 leading-[1.1] group-hover:text-white transition-colors">{cap.title}</h3>
+                     <p className="text-[14px] text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors duration-300">{cap.desc}</p>
                   </div>
                   
                   {/* Premium internal glow */}
-                  <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent2/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                  <div className="absolute -top-20 -right-20 w-48 h-48 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-full" style={{ backgroundColor: glowColors[i] }}></div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -351,16 +519,45 @@ export default function Home() {
           
           <div className="flex flex-col border-t border-white/10 max-w-[1600px] mx-auto">
             {[
-              { s: 'Defense Sector', c: 'text-[#e8642a]', t: '330 BDE HQ Readiness (Indian Army)', d: 'Engineered an air-gapped React + Electron operational dashboard for the Indian Army. Built to aggregate and visualize brigade-level metrics including combat manpower, armored vehicle allocation, and overall war readiness.', tags: ['React', 'Electron', 'Defense Protocol'], y: '2024' },
-              { s: 'High-Scale D2C', c: 'text-[#4d7fff]', t: 'boAt Nirvana Ion Launch', d: 'Architected the flagship product launch experience for Imagine Marketing (boAt). Engineered a high-performance interactive frontend featuring cinematic WebGL 3D model reveals driven by complex scroll-linked animation timelines.', tags: ['WebGL', '3D Animation', 'Scroll Architecture'], y: '2023' },
-              { s: 'Enterprise SaaS', c: 'text-[#2fd4a0]', t: 'GeM SaaS: Tender Automation', d: 'Architected a Next.js (React) application for Archana Associates to completely automate internal tender bidding, document generation, and compliance filing for government contracts.', tags: ['Next.js', 'Document Automation', 'B2B SaaS'], y: '2025' }
+              {
+                s: 'Defense Sector', c: '#e8642a',
+                t: '330 BDE HQ Readiness (Indian Army)',
+                d: 'Engineered an air-gapped React + Electron operational dashboard for the Indian Army. Built to aggregate and visualize brigade-level metrics including combat manpower, armored vehicle allocation, and overall war readiness.',
+                tags: ['React', 'Electron', 'Defense Protocol'], y: '2024',
+                img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=60&auto=format&fit=crop',
+              },
+              {
+                s: 'High-Scale D2C', c: '#4d7fff',
+                t: 'boAt Nirvana Ion Launch',
+                d: 'Architected the flagship product launch experience for Imagine Marketing (boAt). Engineered a high-performance interactive frontend featuring cinematic WebGL 3D model reveals driven by complex scroll-linked animation timelines.',
+                tags: ['WebGL', '3D Animation', 'Scroll Architecture'], y: '2023',
+                img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=60&auto=format&fit=crop',
+              },
+              {
+                s: 'Enterprise SaaS', c: '#2fd4a0',
+                t: 'GeM SaaS: Tender Automation',
+                d: 'Architected a Next.js (React) application for Archana Associates to completely automate internal tender bidding, document generation, and compliance filing for government contracts.',
+                tags: ['Next.js', 'Document Automation', 'B2B SaaS'], y: '2025',
+                img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=60&auto=format&fit=crop',
+              },
             ].map((dep, i) => (
               <div key={i} className="group relative border-b border-white/5 overflow-hidden cursor-crosshair">
-                <div className="absolute inset-0 bg-white/[0.02] -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0"></div>
+                {/* Slide-in background with image */}
+                <div className="absolute inset-0 -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0">
+                  <img src={dep.img} alt={dep.t} className="absolute inset-0 w-full h-full object-cover opacity-5" />
+                  <div className="absolute inset-0 bg-white/[0.02]"></div>
+                </div>
                 
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 py-10 lg:py-12 relative z-10">
-                  <div className={`font-mono text-[11px] font-medium tracking-[0.15em] uppercase md:w-[200px] shrink-0 transition-colors ${dep.c} flex items-center gap-2`}>
-                     <span className="w-1.5 h-1.5 rounded-full bg-current"></span>{dep.s}
+                  <div className="font-mono text-[11px] font-medium tracking-[0.15em] uppercase md:w-[200px] shrink-0 flex flex-col gap-2">
+                    {/* Thumbnail on hover */}
+                    <div className="w-0 h-0 overflow-hidden group-hover:w-[60px] group-hover:h-[40px] transition-all duration-500 rounded overflow-hidden mb-2">
+                      <img src={dep.img} alt={dep.t} className="w-full h-full object-cover opacity-80 rounded" />
+                    </div>
+                    <span className="flex items-center gap-2" style={{ color: dep.c }}>
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: dep.c }}></span>
+                      {dep.s}
+                    </span>
                   </div>
                   
                   <div className="flex-1 w-full pl-0 md:pl-8 border-l border-transparent md:group-hover:border-white/10 transition-colors duration-500">
@@ -384,9 +581,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ELEGANT PHILOSOPHY (Re-authored for Space Grotesk / Outfit Premium Tone) */}
+        {/* ELEGANT PHILOSOPHY */}
         <section id="philosophy" className="min-h-[70vh] flex flex-col items-center justify-center py-[120px] px-6 md:px-12 relative overflow-hidden bg-[#020305] border-t border-white/5 w-full">
-          {/* Subtle background glow linking it to Premium theme */}
+          {/* Cinematic background */}
+          <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=70&auto=format&fit=crop"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.06] pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#020305] via-transparent to-[#020305] pointer-events-none"></div>
+          {/* Radial glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
 
           <div className="font-mono text-[11px] font-medium tracking-[0.25em] text-white/50 uppercase mb-16 relative z-10 flex items-center gap-4">
@@ -420,22 +624,31 @@ export default function Home() {
            </div>
            
            <div className="w-full overflow-hidden pb-10" ref={carouselTrackRef}>
-              <div className="carousel-marquee-track flex gap-6 px-6 lg:px-16 w-max">
-                 {[1,2,3,4,5,6].map((it) => (
-                    <Link href={`/what-we-think`} key={it} className="w-[300px] md:w-[400px] h-[250px] md:h-[300px] rounded-2xl border border-white/10 bg-white/[0.02] p-8 flex flex-col justify-end hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group relative overflow-hidden">
-                       <div className="absolute inset-0 bg-gradient-to-t from-void to-transparent z-0 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+              <div className="carousel-marquee-track flex gap-5 px-6 lg:px-16 w-max">
+                 {[
+                   { title: "Zero-Trust Architecture in Defense-Grade Systems", cat: "Security Engineering", img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=60&auto=format&fit=crop", color: "#e8642a" },
+                   { title: "Building Offline-First Native Apps for Enterprise Field Ops", cat: "Mobile Architecture", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=60&auto=format&fit=crop", color: "#4d7fff" },
+                   { title: "Headless Commerce at Scale: Lessons from a 10x Revenue Migration", cat: "E-Commerce Engineering", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=60&auto=format&fit=crop", color: "#2fd4a0" },
+                   { title: "How We Automated Government Tender Filing with LLMs", cat: "AI Integration", img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=60&auto=format&fit=crop", color: "#8b5cf6" },
+                   { title: "IoT Edge Computing: Bridging Physical Infrastructure & Software", cat: "IoT Systems", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=60&auto=format&fit=crop", color: "#ec4899" },
+                   { title: "The Architecture Behind boAt's WebGL Product Launch", cat: "Frontend Engineering", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=60&auto=format&fit=crop", color: "#e8642a" },
+                 ].flatMap((it, idx) => [it, { ...it, key: idx + "b" }]).map((it, i) => (
+                    <Link href="/what-we-think" key={i} className="w-[320px] md:w-[420px] h-[280px] md:h-[340px] rounded-2xl border border-white/10 p-8 flex flex-col justify-end transition-all duration-500 group relative overflow-hidden hover:border-white/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] flex-shrink-0">
+                       {/* Background image */}
+                       <img src={it.img} alt={it.title} className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-35 transition-opacity duration-500 group-hover:scale-105 transition-transform duration-700" />
+                       {/* Gradient overlay */}
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#020305] via-[#020305]/60 to-transparent z-0"></div>
+                       {/* Color accent line top */}
+                       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent to-transparent z-10 group-hover:opacity-100 opacity-60 transition-opacity" style={{ backgroundImage: `linear-gradient(to right, transparent, ${it.color}, transparent)` }}></div>
                        <div className="relative z-10">
-                          <div className="font-mono text-[10px] text-accent mb-3 uppercase tracking-widest">Engineering Journal</div>
-                          <div className="font-display font-medium text-[24px] text-white leading-tight group-hover:text-accent2 transition-colors duration-300">Resolving Microservice Bottlenecks at Scale Vol {it}</div>
-                       </div>
-                    </Link>
-                 ))}
-                 {[1,2,3,4,5,6].map((it) => (
-                    <Link href={`/what-we-think`} key={it+"b"} className="w-[300px] md:w-[400px] h-[250px] md:h-[300px] rounded-2xl border border-white/10 bg-white/[0.02] p-8 flex flex-col justify-end hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group relative overflow-hidden">
-                       <div className="absolute inset-0 bg-gradient-to-t from-void to-transparent z-0 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                       <div className="relative z-10">
-                          <div className="font-mono text-[10px] text-accent mb-3 uppercase tracking-widest">Engineering Journal</div>
-                          <div className="font-display font-medium text-[24px] text-white leading-tight group-hover:text-accent2 transition-colors duration-300">Resolving Microservice Bottlenecks at Scale Vol {it}</div>
+                          <div className="font-mono text-[9px] mb-3 uppercase tracking-widest flex items-center gap-2" style={{ color: it.color }}>
+                            <span className="w-3 h-[1px]" style={{ backgroundColor: it.color }}></span>
+                            {it.cat}
+                          </div>
+                          <div className="font-display font-medium text-[22px] md:text-[26px] text-white leading-tight group-hover:text-white transition-colors duration-300">{it.title}</div>
+                          <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.1em] text-white/30 group-hover:text-white/60 transition-colors flex items-center gap-2">
+                            Read Teardown <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+                          </div>
                        </div>
                     </Link>
                  ))}
@@ -505,20 +718,26 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={i}
-                className="relative bg-white/[0.02] border border-white/5 rounded-2xl p-8 flex flex-col gap-6 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 group"
+                className="relative rounded-2xl p-8 flex flex-col gap-6 transition-all duration-500 group overflow-hidden shimmer-card noise-overlay"
+                style={{
+                  background: `linear-gradient(135deg, ${t.color}08 0%, #020305 60%)`,
+                  border: `1px solid ${t.color}15`,
+                }}
               >
-                {/* Accent top line */}
-                <div className="h-[1px] w-12 rounded-full" style={{ backgroundColor: t.color }}></div>
+                {/* Hover gradient */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ background: `radial-gradient(ellipse at top left, ${t.color}12, transparent 60%)` }}></div>
+                {/* Top accent line — full width on hover */}
+                <div className="absolute top-0 left-0 h-[1px] w-12 group-hover:w-full transition-all duration-700 ease-out" style={{ backgroundColor: t.color }}></div>
 
-                {/* Quote mark */}
-                <div className="font-display text-[56px] leading-none font-medium text-white/5 absolute top-6 right-8 select-none group-hover:text-white/10 transition-colors">"</div>
+                {/* Quote mark watermark */}
+                <div className="font-display text-[80px] leading-none font-medium absolute top-2 right-6 select-none opacity-5 group-hover:opacity-10 transition-opacity" style={{ color: t.color }}>"</div>
 
-                <p className="text-[15px] text-white/70 font-light leading-[1.8] relative z-10 flex-1">"{t.quote}"</p>
+                <p className="text-[15px] text-white/65 font-light leading-[1.9] relative z-10 flex-1 group-hover:text-white/80 transition-colors duration-300">"{t.quote}"</p>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+                <div className="flex items-center gap-4 pt-4 border-t border-white/[0.06]">
                   <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold font-mono shrink-0"
-                    style={{ backgroundColor: `${t.color}20`, color: t.color, border: `1px solid ${t.color}40` }}
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-[12px] font-bold font-mono shrink-0 group-hover:scale-110 transition-transform duration-300"
+                    style={{ backgroundColor: `${t.color}15`, color: t.color, border: `1px solid ${t.color}35` }}
                   >
                     {t.author[0]}
                   </div>
@@ -527,8 +746,8 @@ export default function Home() {
                     <div className="font-mono text-[10px] text-white/40 uppercase tracking-[0.1em]">{t.role}</div>
                   </div>
                   <div
-                    className="ml-auto font-mono text-[9px] uppercase tracking-[0.1em] px-3 py-1 rounded-full border"
-                    style={{ color: t.color, borderColor: `${t.color}30`, backgroundColor: `${t.color}10` }}
+                    className="ml-auto font-mono text-[9px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full border"
+                    style={{ color: t.color, borderColor: `${t.color}25`, backgroundColor: `${t.color}08` }}
                   >
                     {t.tag}
                   </div>
@@ -540,9 +759,16 @@ export default function Home() {
       </section>
 
       {/* PRE-FOOTER CTA */}
-      <section id="engage" className="py-[100px] px-6 lg:px-16 bg-[#040608] border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center text-center w-full z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent2/5 rounded-full blur-[100px] pointer-events-none"></div>
-        <h2 className="font-display font-medium text-[48px] md:text-[64px] text-white leading-none mb-6 relative z-10">Ready to build?</h2>
+      <section id="engage" className="py-[120px] px-6 lg:px-16 bg-[#040608] border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center text-center w-full z-10">
+        {/* Background city/architecture image */}
+        <img
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=70&auto=format&fit=crop"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040608] via-[#040608]/80 to-[#040608] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent2/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <h2 className="font-display font-medium text-[48px] md:text-[72px] text-white leading-none mb-6 relative z-10">Ready to build?</h2>
         <p className="text-[15px] text-white/50 font-light mb-10 max-w-[400px] relative z-10">Stop paying for bloated software. Architect your own digital infrastructure today.</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10 w-full">
           <a href="tel:+918655509976" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full transition-all hover:bg-white/10 w-full sm:w-auto text-center">
