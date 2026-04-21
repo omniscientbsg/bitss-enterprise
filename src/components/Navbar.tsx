@@ -13,13 +13,8 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 lg:px-12 h-[72px] bg-[#05070a]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-[28px] h-[28px] grid grid-cols-2 gap-[3px] transform group-hover:scale-105 transition-transform duration-300">
-            <span className="bg-accent rounded-sm block shadow-[0_0_10px_rgba(232,100,42,0.4)]"></span>
-            <span className="bg-accent2 rounded-sm block shadow-[0_0_10px_rgba(77,127,255,0.4)]"></span>
-            <span className="bg-accent2 rounded-sm block shadow-[0_0_10px_rgba(77,127,255,0.4)]"></span>
-            <span className="bg-accent rounded-sm block shadow-[0_0_10px_rgba(232,100,42,0.4)]"></span>
-          </div>
-          <span className="font-mono text-[14px] font-semibold tracking-[0.15em] text-white">BITSS</span>
+          <img src="/BITSS Logo Re-Design.png" alt="BITSS" className="h-[36px] md:h-[44px] w-auto transition-transform duration-300 transform group-hover:scale-105" />
+          <span className="font-mono text-[16px] md:text-[20px] font-semibold tracking-[0.15em] text-white">BITSS</span>
         </Link>
 
         <div className="hidden md:flex gap-8 items-center bg-white/[0.03] px-6 py-2 rounded-full border border-white/5">

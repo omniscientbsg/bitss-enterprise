@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -121,6 +122,17 @@ export default function Home() {
       );
     }
 
+    // Dynamic Abstract Card Interaction (Mobile Support)
+    const capCards = gsap.utils.toArray('.capability-card');
+    capCards.forEach((card: any) => {
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top center",
+        end: "bottom center",
+        toggleClass: { targets: card, className: "is-active" }
+      });
+    });
+
   }, { scope: container });
 
   return (
@@ -204,21 +216,21 @@ export default function Home() {
                <div className="font-mono text-[9px] font-medium tracking-[0.2em] text-white/40 uppercase text-center mb-6">Certified Engineering Partners</div>
                <div className="marquee-wrapper w-full flex">
                   {/* Glowing, Interactive SVGs */}
-                     {/* Seamless CSS-animated marquee — duplicated set for seamless loop */}
+                     {/* Seamless CSS-animated marquee */}
                   <div className="marquee-infinite items-center">
                      {[...Array(2)].map((_, setIdx) => (
-                        <div key={setIdx} className="flex items-center space-x-12 md:space-x-24 px-12 shrink-0">
+                        <div key={setIdx} className="flex items-center justify-around w-[1200px] shrink-0">
                            {[
-                             { src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", alt: "Meta", glow: "#0668E1", h: "h-6 md:h-8" },
-                             { src: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg", alt: "Shopify", glow: "#95bf47", h: "h-7 md:h-9" },
-                             { src: "https://cdn.worldvectorlogo.com/logos/hostinger.svg", alt: "Hostinger", glow: "#673ab7", h: "h-6 md:h-8" },
-                             { src: "https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg", alt: "Razorpay", glow: "#0288D1", h: "h-6 md:h-8" },
-                             { src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", alt: "AWS", glow: "#FF9900", h: "h-6 md:h-8" },
-                             { src: "https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg", alt: "Firebase", glow: "#FFA000", h: "h-6 md:h-8" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", alt: "Meta", glow: "#0668E1" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg", alt: "Shopify", glow: "#95bf47" },
+                             { src: "https://cdn.worldvectorlogo.com/logos/hostinger.svg", alt: "Hostinger", glow: "#673ab7" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg", alt: "Razorpay", glow: "#0288D1" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", alt: "AWS", glow: "#FF9900" },
+                             { src: "https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg", alt: "Firebase", glow: "#FFA000" },
                            ].map((logo) => (
-                              <span key={logo.alt} className="group flex items-center justify-center relative cursor-crosshair shrink-0">
+                              <span key={logo.alt} className="group flex items-center justify-center relative cursor-crosshair shrink-0 px-8">
                                  <div className="absolute inset-0 blur-[20px] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full" style={{ backgroundColor: logo.glow }}></div>
-                                 <img src={logo.src} alt={logo.alt} className={`${logo.h} w-auto flex-shrink-0 brightness-0 invert opacity-35 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10`} />
+                                 <img src={logo.src} alt={logo.alt} className={`h-8 w-auto object-contain flex-shrink-0 brightness-0 invert opacity-35 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 relative z-10`} />
                               </span>
                            ))}
                         </div>
@@ -242,27 +254,18 @@ export default function Home() {
                  When data integrity is a matter of compliance, off-the-shelf software is a liability. We deploy completely isolated architectures using custom zero-trust protocols, perfect for Healthcare, Finance, and Enterprise Defense operations.
                </p>
              </div>
-             <div className="flex-1 w-full relative h-[400px] lg:h-[500px] bg-[#020508] border border-white/5 rounded-2xl overflow-hidden flex items-center justify-center isolate group shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-                {/* Stunning Premium Matrix Net */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(77,127,255,0.05),transparent_70%)]"></div>
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30 transform -skew-y-[6deg] scale-[1.5] origin-center animate-[spin_120s_linear_infinite_reverse]"></div>
+             <div className="flex-1 w-full relative min-h-[300px] md:min-h-[400px] lg:h-[500px] bg-[#020508] border border-white/5 rounded-2xl overflow-hidden flex items-center justify-center isolate group shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+                {/* Subtle vignette overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(2,5,8,0.6)_100%)] z-10 pointer-events-none"></div>
                 
-                <div className="relative z-10 w-32 h-32 lg:w-48 lg:h-48 border border-accent2/30 rounded-full flex items-center justify-center shadow-[inset_0_0_40px_rgba(77,127,255,0.15)] group-hover:border-accent2/60 transition-colors duration-1000">
-                   <div className="absolute w-48 h-48 lg:w-[320px] lg:h-[320px] border border-white/5 rounded-full animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                   
-                   <div className="absolute w-64 h-64 lg:w-[400px] lg:h-[400px] border border-dashed border-white/5 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                {/* The GIF — full bleed, object-contain on mobile */}
+                <img
+                  src="/bde3e16f060043de9e2ebc624fb64049.gif"
+                  alt="Enterprise Engineering Visualisation"
+                  className="w-full h-full object-contain md:object-cover absolute inset-0"
+                />
 
-                   <div className="absolute w-56 h-56 lg:w-72 lg:h-72 animate-[spin_12s_linear_infinite]">
-                      <div className="absolute top-0 left-1/2 w-3 h-3 -ml-1.5 bg-accent2 rounded-full shadow-[0_0_15px_rgba(77,127,255,1)]"></div>
-                   </div>
-
-                   <div className="w-16 h-16 lg:w-20 lg:h-20 bg-void border border-accent2/20 rounded-2xl flex items-center justify-center relative overflow-hidden backdrop-blur-md">
-                      <div className="absolute inset-0 bg-accent2/10 animate-pulse"></div>
-                      <svg className="w-16 h-16 text-accent2 opacity-80 animate-[spin_10s_linear_infinite]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1"><circle cx="50" cy="50" r="45" strokeDasharray="4 4" /><ellipse cx="50" cy="50" rx="45" ry="15" /><ellipse cx="50" cy="50" rx="15" ry="45" /><path d="M 5 50 H 95 M 50 5 V 95" strokeOpacity="0.5" /></svg>
-                   </div>
-                </div>
-
-                <div className="absolute bottom-6 left-6 font-mono text-[10px] font-medium uppercase tracking-[0.1em] text-white/50 bg-[#020508]/60 px-4 py-2 border border-white/10 rounded-full flex items-center gap-3 backdrop-blur-md">
+                <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto font-mono text-[10px] font-medium uppercase tracking-[0.1em] text-white/50 bg-[#020508]/80 px-4 py-2 border border-white/10 rounded-full flex items-center gap-3 backdrop-blur-md z-20 w-fit">
                   <span className="w-2 h-2 bg-accent2 rounded-full animate-pulse shadow-[0_0_5px_rgba(77,127,255,1)]"></span>
                   Node Secure Isolation active
                 </div>
@@ -311,29 +314,66 @@ export default function Home() {
           <div className="border border-white/5 rounded-2xl overflow-hidden bg-white/5">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px]">
               {[
-                { num: '01', title: 'Custom Enterprise Software', desc: 'Proprietary operational systems replacing off-the-shelf limits. Factory OEE to HR pipelines.', i: Icons.software },
-                { num: '02', title: 'Mobile & Web Apps', desc: 'High-performance native iOS, Android, and Web applications built for complex offline workflows.', i: Icons.apps },
-                { num: '03', title: 'AI Tech Solutions', desc: 'Secure, private LLM layers tailored directly into your core data architecture.', i: Icons.ai },
-                { num: '04', title: 'Headless E-commerce', desc: 'Scalable APIs and robust edge-caching for D2C platforms to support massive concurrent checkouts.', i: Icons.ecom },
-                { num: '05', title: 'IoT & Hardware Systems', desc: 'Bridging the gap between physical infrastructure and intelligent software layers.', i: Icons.iot },
-                { num: '06', title: 'CRM & ERP Solutions', desc: 'Centralized platforms to manage sales funnels, automate leads, and streamline business operations across all departments.', i: Icons.analytics },
-                { num: '07', title: 'B2B Client Portals', desc: 'Secure, high-conversion hubs allowing partners and clients to plug directly into your proprietary databases and workflows.', i: Icons.identity },
-                { num: '08', title: 'Legacy Modernization', desc: 'Transitioning brittle, outdated software monoliths into high-speed, scalable Next.js and React Native architecture.', i: Icons.edge },
+                { num: '01', title: 'Custom Enterprise Software', desc: 'Proprietary operational systems replacing off-the-shelf limits. Factory OEE to HR pipelines.', i: Icons.software,
+                  bg: `radial-gradient(ellipse at 0% 0%, rgba(77,127,255,0.35) 0%, transparent 60%), radial-gradient(ellipse at 100% 100%, rgba(99,102,241,0.2) 0%, transparent 60%)`,
+                  pattern: `repeating-linear-gradient(0deg, rgba(77,127,255,0.04) 0px, transparent 1px, transparent 40px, rgba(77,127,255,0.04) 41px), repeating-linear-gradient(90deg, rgba(77,127,255,0.04) 0px, transparent 1px, transparent 40px, rgba(77,127,255,0.04) 41px)`,
+                  glow: 'rgba(77,127,255,0.5)' },
+                { num: '02', title: 'Mobile & Web Apps', desc: 'High-performance native iOS, Android, and Web applications built for complex offline workflows.', i: Icons.apps,
+                  bg: `radial-gradient(ellipse at 100% 0%, rgba(232,100,42,0.35) 0%, transparent 60%), radial-gradient(ellipse at 0% 100%, rgba(251,146,60,0.15) 0%, transparent 60%)`,
+                  pattern: `repeating-linear-gradient(45deg, rgba(232,100,42,0.04) 0px, transparent 1px, transparent 28px, rgba(232,100,42,0.04) 29px)`,
+                  glow: 'rgba(232,100,42,0.5)' },
+                { num: '03', title: 'AI Tech Solutions', desc: 'Secure, private LLM layers tailored directly into your core data architecture.', i: Icons.ai,
+                  bg: `radial-gradient(ellipse at 50% 0%, rgba(45,212,160,0.3) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(16,185,129,0.15) 0%, transparent 50%)`,
+                  pattern: `radial-gradient(circle at 50% 50%, rgba(45,212,160,0.06) 0%, transparent 50%), repeating-conic-gradient(rgba(45,212,160,0.03) 0deg, transparent 1deg, transparent 9deg, rgba(45,212,160,0.03) 10deg)`,
+                  glow: 'rgba(45,212,160,0.5)' },
+                { num: '04', title: 'Headless E-commerce', desc: 'Scalable APIs and robust edge-caching for D2C platforms to support massive concurrent checkouts.', i: Icons.ecom,
+                  bg: `radial-gradient(ellipse at 0% 100%, rgba(139,92,246,0.35) 0%, transparent 60%), radial-gradient(ellipse at 100% 0%, rgba(167,139,250,0.15) 0%, transparent 50%)`,
+                  pattern: `repeating-linear-gradient(-45deg, rgba(139,92,246,0.04) 0px, transparent 1px, transparent 28px, rgba(139,92,246,0.04) 29px)`,
+                  glow: 'rgba(139,92,246,0.5)' },
+                { num: '05', title: 'IoT & Hardware Systems', desc: 'Bridging the gap between physical infrastructure and intelligent software layers.', i: Icons.iot,
+                  bg: `radial-gradient(ellipse at 100% 100%, rgba(236,72,153,0.3) 0%, transparent 60%), radial-gradient(circle at 20% 20%, rgba(244,114,182,0.15) 0%, transparent 50%)`,
+                  pattern: `repeating-linear-gradient(30deg, rgba(236,72,153,0.04) 0px, transparent 1px, transparent 20px, rgba(236,72,153,0.04) 21px), repeating-linear-gradient(-30deg, rgba(236,72,153,0.04) 0px, transparent 1px, transparent 20px, rgba(236,72,153,0.04) 21px)`,
+                  glow: 'rgba(236,72,153,0.5)' },
+                { num: '06', title: 'CRM & ERP Solutions', desc: 'Centralized platforms to manage sales funnels, automate leads, and streamline business operations across all departments.', i: Icons.analytics,
+                  bg: `radial-gradient(ellipse at 50% 100%, rgba(245,158,11,0.3) 0%, transparent 60%), radial-gradient(circle at 80% 10%, rgba(252,211,77,0.1) 0%, transparent 50%)`,
+                  pattern: `radial-gradient(circle at 25% 75%, rgba(245,158,11,0.08) 0%, transparent 40%), radial-gradient(circle at 75% 25%, rgba(245,158,11,0.05) 0%, transparent 40%)`,
+                  glow: 'rgba(245,158,11,0.5)' },
+                { num: '07', title: 'B2B Client Portals', desc: 'Secure, high-conversion hubs allowing partners and clients to plug directly into your proprietary databases and workflows.', i: Icons.identity,
+                  bg: `radial-gradient(ellipse at 0% 50%, rgba(20,184,166,0.3) 0%, transparent 60%), radial-gradient(circle at 100% 50%, rgba(45,212,191,0.1) 0%, transparent 50%)`,
+                  pattern: `repeating-linear-gradient(90deg, rgba(20,184,166,0.05) 0px, transparent 1px, transparent 24px, rgba(20,184,166,0.05) 25px), repeating-linear-gradient(0deg, rgba(20,184,166,0.03) 0px, transparent 1px, transparent 60px, rgba(20,184,166,0.03) 61px)`,
+                  glow: 'rgba(20,184,166,0.5)' },
+                { num: '08', title: 'Legacy Modernization', desc: 'Transitioning brittle, outdated software monoliths into high-speed, scalable Next.js and React Native architecture.', i: Icons.edge,
+                  bg: `radial-gradient(ellipse at 100% 50%, rgba(99,102,241,0.3) 0%, transparent 60%), radial-gradient(ellipse at 0% 0%, rgba(129,140,248,0.1) 0%, transparent 50%)`,
+                  pattern: `repeating-linear-gradient(60deg, rgba(99,102,241,0.04) 0px, transparent 1px, transparent 30px, rgba(99,102,241,0.04) 31px), repeating-linear-gradient(-60deg, rgba(99,102,241,0.03) 0px, transparent 1px, transparent 30px, rgba(99,102,241,0.03) 31px)`,
+                  glow: 'rgba(99,102,241,0.5)' },
               ].map((cap, i) => (
-                <div key={i} className="bg-[#0b0e14] p-8 lg:p-10 relative overflow-hidden group hover:bg-[#11151e] transition-colors duration-500 cursor-crosshair">
-                  <div className="flex flex-col h-full relative z-10 w-full">
+                <div key={i} className="capability-card bg-[#0b0e14] p-8 lg:p-10 relative overflow-hidden group transition-all duration-500 cursor-crosshair">
+                  {/* Abstract Gradient Pattern Background */}
+                  <div className="absolute inset-0 pointer-events-none z-0 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-700"
+                    style={{ background: cap.bg }}>
+                  </div>
+                  <div className="absolute inset-0 pointer-events-none z-0 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-700"
+                    style={{ backgroundImage: cap.pattern }}>
+                  </div>
+                  {/* Base dim pattern always visible */}
+                  <div className="absolute inset-0 pointer-events-none z-0 opacity-20"
+                    style={{ backgroundImage: cap.pattern }}>
+                  </div>
+                  {/* Glow dot */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-700 pointer-events-none"
+                    style={{ backgroundColor: cap.glow }}>
+                  </div>
+
+                  <div className="flex flex-col h-full relative z-10 w-full transition-all duration-700">
                      <div className="flex items-center justify-between mb-10 w-full">
-                       <div className="p-3 bg-void rounded-xl border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-500 will-change-transform">
+                       <div className="p-3 bg-[#0b0e14]/80 rounded-xl border border-white/5 shadow-lg group-hover:scale-110 group-[.is-active]:scale-110 transition-transform duration-500 will-change-transform backdrop-blur-md">
                           <cap.i />
                        </div>
-                       <span className="font-mono text-[11px] font-medium tracking-[0.1em] text-white/30 group-hover:text-accent2 transition-colors">{cap.num}</span>
+                       <span className="font-mono text-[11px] font-medium tracking-[0.1em] text-white/30 group-hover:text-white group-[.is-active]:text-white transition-colors">{cap.num}</span>
                      </div>
                      <h3 className="font-display font-medium text-[24px] lg:text-[28px] tracking-tight text-white mb-4 leading-[1.1]">{cap.title}</h3>
-                     <p className="text-[14px] text-white/50 font-light leading-relaxed">{cap.desc}</p>
+                     <p className="text-[14px] text-white/50 font-light leading-relaxed group-hover:text-white/70 group-[.is-active]:text-white/70 transition-colors duration-500">{cap.desc}</p>
                   </div>
-                  
-                  {/* Premium internal glow */}
-                  <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent2/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 </div>
               ))}
             </div>
@@ -407,35 +447,42 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Insights & Vision Pipeline (NEW Premium Carousel) */}
+        {/* Insights & Vision Pipeline */}
         <section className="py-[100px] border-t border-white/5 bg-void relative overflow-hidden ">
            <div className="max-w-[1600px] mx-auto px-6 lg:px-16 mb-12">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                  <div>
                     <h2 className="font-display font-medium text-[42px] text-white">Insights Pipeline</h2>
-                    <p className="font-mono text-[11px] tracking-[0.1em] text-white/40 mt-2 uppercase">Latest engineering teardowns</p>
+                    <p className="font-mono text-[11px] tracking-[0.1em] text-white/40 mt-2 uppercase">Latest engineering teardowns & architectural postmortems</p>
                  </div>
-                 <Link href="/what-we-think" className="font-mono text-[11px] uppercase tracking-[0.1em] text-accent2 hover:text-white transition-colors">View All Publications</Link>
+                 <Link href="/what-we-think" className="font-mono text-[11px] uppercase tracking-[0.1em] text-accent2 hover:text-white transition-colors">View All Publications →</Link>
               </div>
            </div>
-           
+
            <div className="w-full overflow-hidden pb-10" ref={carouselTrackRef}>
               <div className="carousel-marquee-track flex gap-6 px-6 lg:px-16 w-max">
-                 {[1,2,3,4,5,6].map((it) => (
-                    <Link href={`/what-we-think`} key={it} className="w-[300px] md:w-[400px] h-[250px] md:h-[300px] rounded-2xl border border-white/10 bg-white/[0.02] p-8 flex flex-col justify-end hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group relative overflow-hidden">
-                       <div className="absolute inset-0 bg-gradient-to-t from-void to-transparent z-0 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                       <div className="relative z-10">
-                          <div className="font-mono text-[10px] text-accent mb-3 uppercase tracking-widest">Engineering Journal</div>
-                          <div className="font-display font-medium text-[24px] text-white leading-tight group-hover:text-accent2 transition-colors duration-300">Resolving Microservice Bottlenecks at Scale Vol {it}</div>
-                       </div>
-                    </Link>
-                 ))}
-                 {[1,2,3,4,5,6].map((it) => (
-                    <Link href={`/what-we-think`} key={it+"b"} className="w-[300px] md:w-[400px] h-[250px] md:h-[300px] rounded-2xl border border-white/10 bg-white/[0.02] p-8 flex flex-col justify-end hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group relative overflow-hidden">
-                       <div className="absolute inset-0 bg-gradient-to-t from-void to-transparent z-0 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                       <div className="relative z-10">
-                          <div className="font-mono text-[10px] text-accent mb-3 uppercase tracking-widest">Engineering Journal</div>
-                          <div className="font-display font-medium text-[24px] text-white leading-tight group-hover:text-accent2 transition-colors duration-300">Resolving Microservice Bottlenecks at Scale Vol {it}</div>
+                 {[
+                   { slug: "claude-mythos", tag: "AI Model Architecture", date: "19.04.2026", title: "Claude Mythos: Anthropic's Philosophical Leap Beyond Just Safety", accent: "text-[#e8642a]", img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&q=80&w=800" },
+                   { slug: "attention-is-everything", tag: "Deep Learning", date: "14.04.2026", title: "Attention Is Everything: How One 2017 Paper Still Dictates Modern AI", accent: "text-[#4d7fff]", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" },
+                   { slug: "cloudflare-one-line-error", tag: "Infrastructure Postmortem", date: "09.04.2026", title: "How One Missing Character Took Down Cloudflare's Global Network", accent: "text-[#2fd4a0]", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" },
+                 ].flatMap((art, _, arr) => [art, ...arr.filter(a => a.slug !== art.slug)]).slice(0, 6).concat(
+                   [
+                     { slug: "claude-mythos", tag: "AI Model Architecture", date: "19.04.2026", title: "Claude Mythos: Anthropic's Philosophical Leap Beyond Just Safety", accent: "text-[#e8642a]", img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&q=80&w=800" },
+                     { slug: "attention-is-everything", tag: "Deep Learning", date: "14.04.2026", title: "Attention Is Everything: How One 2017 Paper Still Dictates Modern AI", accent: "text-[#4d7fff]", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" },
+                     { slug: "cloudflare-one-line-error", tag: "Infrastructure Postmortem", date: "09.04.2026", title: "How One Missing Character Took Down Cloudflare's Global Network", accent: "text-[#2fd4a0]", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" },
+                   ]
+                 ).map((art, idx) => (
+                    <Link href={`/what-we-think/${art.slug}`} key={idx}
+                      className="w-[300px] md:w-[380px] h-[280px] md:h-[320px] rounded-2xl border border-white/10 bg-white/[0.02] flex flex-col justify-end hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 group relative overflow-hidden shrink-0">
+                       {/* Cover image greyscale → colour */}
+                       <img src={art.img} alt={art.title} className="absolute inset-0 w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-50 transition-all duration-700" />
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#020305] via-[#020305]/60 to-transparent z-0"></div>
+                       <div className="relative z-10 p-6">
+                          <div className={`font-mono text-[9px] ${art.accent} mb-3 uppercase tracking-widest`}>{art.tag} · {art.date}</div>
+                          <div className="font-display font-medium text-[20px] md:text-[22px] text-white leading-tight group-hover:text-accent2 transition-colors duration-300">{art.title}</div>
+                          <div className="mt-4 inline-flex items-center text-white/30 font-mono text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">
+                            Read Log <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                          </div>
                        </div>
                     </Link>
                  ))}
@@ -552,55 +599,12 @@ export default function Home() {
             onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
             className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white w-full sm:w-auto text-center"
           >
-            Start Your Project →
+            Initiate Architecture Review →
           </button>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/5 pt-16 pb-8 px-6 lg:px-16 bg-[#020305] relative z-10 w-full overflow-hidden">
-        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-2 flex flex-col items-start">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex flex-col gap-[2px]">
-                <div className="w-4 h-[5px] bg-accent2 rounded-sm"></div>
-                <div className="w-4 h-[5px] bg-accent rounded-sm"></div>
-              </div>
-              <span className="text-2xl font-bold tracking-tighter text-white font-display">BITSS</span>
-            </div>
-            <p className="text-[13px] text-white/40 leading-[1.8] max-w-[300px] mb-6 text-left">
-              Enterprise architecture, native applications, and secure systems built for scale. Engineered in India for global deployment.
-            </p>
-          </div>
-          <div className="flex flex-col items-start">
-            <h4 className="font-mono text-[10px] font-bold tracking-[0.1em] text-white/60 uppercase mb-6">Architecture</h4>
-            <ul className="flex flex-col gap-4 text-[13px] text-white/40 text-left">
-              <li><a href="#capabilities" className="hover:text-accent2 transition-colors">Enterprise Software</a></li>
-              <li><a href="#capabilities" className="hover:text-accent2 transition-colors">Native Mobile Apps</a></li>
-              <li><a href="#capabilities" className="hover:text-accent2 transition-colors">Headless Commerce</a></li>
-              <li><a href="#capabilities" className="hover:text-accent2 transition-colors">IoT & Hardware</a></li>
-            </ul>
-          </div>
-          <div className="flex flex-col items-start">
-            <h4 className="font-mono text-[10px] font-bold tracking-[0.1em] text-white/60 uppercase mb-6">Company</h4>
-            <ul className="flex flex-col gap-4 text-[13px] text-white/40 text-left">
-              <li><a href="#deployments" className="hover:text-white transition-colors">Deployments</a></li>
-              <li><a href="#philosophy" className="hover:text-white transition-colors">Philosophy</a></li>
-              <li><a href="/what-we-think" className="hover:text-white transition-colors">Engineering Journal</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 max-w-[1600px] mx-auto">
-          <div className="font-mono text-[10px] tracking-[0.1em] font-medium text-white/30 uppercase text-center md:text-left">
-            &copy; 2022 BITSS. All rights reserved. Engineered in India.
-          </div>
-          <div className="flex gap-6 font-mono text-[10px] tracking-[0.1em] font-medium text-white/30 uppercase">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

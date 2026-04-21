@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function EngageModal() {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", company: "", industry: "", message: "", timeline: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", industry: "", message: "", timeline: "" });
 
   useEffect(() => {
     const handler = () => setOpen(true);
@@ -36,7 +36,7 @@ export default function EngageModal() {
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-[560px] bg-[#0b0e14] border border-white/10 rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.8)] overflow-hidden animate-[modalIn_0.3s_cubic-bezier(0.16,1,0.3,1)]">
+      <div className="relative w-full max-w-[560px] max-h-[90vh] overflow-y-auto bg-[#0b0e14] border border-white/10 rounded-2xl shadow-[0_40px_100px_rgba(0,0,0,0.8)] animate-[modalIn_0.3s_cubic-bezier(0.16,1,0.3,1)]">
         {/* Top accent bar */}
         <div className="h-[2px] w-full bg-gradient-to-r from-accent via-accent2 to-accent"></div>
 
@@ -71,6 +71,30 @@ export default function EngageModal() {
                       value={form.name}
                       onChange={e => setForm({...form, name: e.target.value})}
                       placeholder="Baljinder Singh"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-[13px] text-white placeholder-white/20 focus:outline-none focus:border-accent2/50 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 block mb-2">Email Address *</label>
+                    <input
+                      required
+                      type="email"
+                      value={form.email}
+                      onChange={e => setForm({...form, email: e.target.value})}
+                      placeholder="you@company.com"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-[13px] text-white placeholder-white/20 focus:outline-none focus:border-accent2/50 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 block mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={e => setForm({...form, phone: e.target.value})}
+                      placeholder="+91 86555 09976"
                       className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-[13px] text-white placeholder-white/20 focus:outline-none focus:border-accent2/50 transition-colors"
                     />
                   </div>

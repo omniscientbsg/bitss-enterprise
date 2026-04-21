@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BentoCard } from "@/components/ui/BentoCard";
@@ -28,6 +29,11 @@ export default function Deployments() {
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Electron</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Defense Protocol</span>
               </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-accent transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-accent/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           </BentoCard>
@@ -47,6 +53,11 @@ export default function Deployments() {
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">3D Animation</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Headless Front</span>
               </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-accent2 transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-accent2/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent2/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           </BentoCard>
@@ -64,6 +75,11 @@ export default function Deployments() {
               <div className="flex gap-3 flex-wrap">
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Next.js</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Document Automation</span>
+              </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-[#2fd4a0] transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-[#2fd4a0]/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
               </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#2fd4a0]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -83,6 +99,11 @@ export default function Deployments() {
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">React Native</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">CRM</span>
               </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-accent transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-accent/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#f97316]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           </BentoCard>
@@ -100,6 +121,11 @@ export default function Deployments() {
               <div className="flex gap-3 flex-wrap">
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">React Native</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Project Management</span>
+              </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-[#8b5cf6] transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-[#8b5cf6]/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
               </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#8b5cf6]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -119,6 +145,11 @@ export default function Deployments() {
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Headless Shopify</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">React Native (Oxygen)</span>
               </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-[#ec4899] transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-[#ec4899]/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#ec4899]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           </BentoCard>
@@ -136,6 +167,11 @@ export default function Deployments() {
               <div className="flex gap-3 flex-wrap">
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">React</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Booking Engine</span>
+              </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-[#14b8a6] transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-[#14b8a6]/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
               </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#14b8a6]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -155,6 +191,11 @@ export default function Deployments() {
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Next.js</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Auth Routing</span>
               </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-accent2 transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-accent2/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent2/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           </BentoCard>
@@ -172,6 +213,11 @@ export default function Deployments() {
               <div className="flex gap-3 flex-wrap">
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">IoT</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Custom Firmware</span>
+              </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-[#eab308] transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-[#eab308]/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
               </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#eab308]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -191,12 +237,36 @@ export default function Deployments() {
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">Next.js</span>
                 <span className="text-xs font-mono text-white/50 px-3 py-1.5 bg-white/5 rounded border border-white/5">SQLite Caching</span>
               </div>
+              <div className="mt-8">
+                <span className="inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:text-accent2 transition-colors border border-white/5 rounded-full px-5 py-2 group-hover:border-accent2/30 bg-white/[0.02]">
+                  View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </div>
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#64748b]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           </BentoCard>
 
         </div>
       </main>
+
+      {/* PRE-FOOTER CTA */}
+      <section id="engage" className="py-[100px] px-6 lg:px-16 bg-[#040608] border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center text-center w-full z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent2/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <h2 className="font-display font-medium text-[48px] md:text-[64px] text-white leading-none mb-6 relative z-10">Ready to build?</h2>
+        <p className="text-[15px] text-white/50 font-light mb-10 max-w-[400px] relative z-10">Stop paying for bloated software. Architect your own digital infrastructure today.</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10 w-full">
+          <a href="tel:+918655509976" className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white/5 border border-white/10 text-white rounded-full transition-all hover:bg-white/10 w-full sm:w-auto text-center">
+            +91 86555 09976
+          </a>
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
+            className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white w-full sm:w-auto text-center"
+          >
+            Initiate Architecture Review →
+          </button>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
