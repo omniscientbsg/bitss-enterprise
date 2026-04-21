@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { asset } from "@/lib/assets";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,7 +14,7 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 lg:px-12 h-[72px] bg-[#05070a]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
         <Link href="/" className="flex items-center gap-3 group">
-          <img src="/BITSS Logo Re-Design.png" alt="BITSS" className="h-[36px] md:h-[44px] w-auto transition-transform duration-300 transform group-hover:scale-105" />
+          <img src={asset("/BITSS Logo Re-Design.png")} alt="BITSS" className="h-[36px] md:h-[44px] w-auto transition-transform duration-300 transform group-hover:scale-105" />
           <span className="font-mono text-[16px] md:text-[20px] font-semibold tracking-[0.15em] text-white">BITSS</span>
         </Link>
 

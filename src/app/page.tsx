@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { asset } from "@/lib/assets";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -260,7 +261,7 @@ export default function Home() {
                 
                 {/* The GIF — full bleed, object-contain on mobile */}
                 <img
-                  src="/bde3e16f060043de9e2ebc624fb64049.gif"
+                  src={asset("/bde3e16f060043de9e2ebc624fb64049.gif")}
                   alt="Enterprise Engineering Visualisation"
                   className="w-full h-full object-contain md:object-cover absolute inset-0"
                 />
