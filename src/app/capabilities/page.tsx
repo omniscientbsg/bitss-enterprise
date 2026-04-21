@@ -11,7 +11,7 @@ export default function Capabilities() {
           Deep-dive into our technical stacks and systems architecture for custom enterprise solutions, mobile apps, and headless platforms.
         </p>
         <div className="p-8 border border-slate-800 rounded-2xl bg-slate-900/50 backdrop-blur-md">
-           <p className="text-slate-500 font-mono text-sm">// Capabilities payload initialized.</p>
+           <p className="text-slate-500 font-mono text-sm">{"// Capabilities payload initialized."}</p>
            <p className="text-slate-300 mt-4 leading-relaxed tracking-wide">
              We leverage a highly scalable stack tailored for zero-trust security and raw performance.<br/><br/>
              <span className="text-blue-400 font-medium">Frontend:</span> Next.js (App Router), React, Vite.<br/>
