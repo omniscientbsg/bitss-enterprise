@@ -20,7 +20,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 mb-10">
           <Link href="/what-we-think" className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 hover:text-white transition-colors">
-            &larr; Insights Pipeline
+            &#8592; Insights Pipeline
           </Link>
         </div>
 

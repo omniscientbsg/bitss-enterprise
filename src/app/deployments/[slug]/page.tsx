@@ -20,7 +20,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 mb-10">
           <Link href="/deployments" className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 hover:text-white transition-colors">
-            &larr; Back to Deployments
+            &#8592; Back to Deployments
           </Link>
         </div>
 
