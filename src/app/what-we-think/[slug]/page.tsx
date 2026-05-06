@@ -1,16 +1,17 @@
+" use client\;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug } from "@/lib/articles";
 
-export function generateStaticParams() {
+// export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
 }
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const article = getArticleBySlug(resolvedParams.slug);
+export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  
+  const article = getArticleBySlug((params as any).slug);
   if (!article) notFound();
 
   return (

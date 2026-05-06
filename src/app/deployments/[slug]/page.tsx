@@ -1,16 +1,17 @@
+" use client\;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
 
-export function generateStaticParams() {
+// export function generateStaticParams() {
   return caseStudies.map((cs) => ({ slug: cs.slug }));
 }
 
-export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const project = getCaseStudyBySlug(resolvedParams.slug);
+export default function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  
+  const project = getCaseStudyBySlug((params as any).slug);
   if (!project) notFound();
 
   return (
