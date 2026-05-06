@@ -1,17 +1,15 @@
-" use client\;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug } from "@/lib/articles";
 
-// export function generateStaticParams() {
+export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
 }
 
-export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  
-  const article = getArticleBySlug((params as any).slug);
+export default function ArticlePage({ params }: { params: { slug: string } }) {
+  const article = getArticleBySlug(params.slug);
   if (!article) notFound();
 
   return (
@@ -22,7 +20,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 mb-10">
           <Link href="/what-we-think" className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 hover:text-white transition-colors">
-            &#8592; Insights Pipeline
+            &larr; Insights Pipeline
           </Link>
         </div>
 
@@ -32,7 +30,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
             {article.tag}
           </span>
           <span className="font-mono text-[10px] text-white/30 tracking-[0.1em]">{article.date}</span>
-          <span className="font-mono text-[10px] text-white/20 tracking-[0.1em]">A {article.readTime}</span>
+          <span className="font-mono text-[10px] text-white/20 tracking-[0.1em]">&bull; {article.readTime}</span>
         </div>
 
         {/* Title */}
@@ -106,7 +104,6 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
         <h2 className="font-display text-[40px] text-white mb-6">Build the pipeline.</h2>
         <p className="text-white/40 font-light mb-10 max-w-[400px]">Engage our engineering team for a technical architecture review of your systems.</p>
         <button
-            onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
             className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white"
           >
             Initiate Engagement &rarr;

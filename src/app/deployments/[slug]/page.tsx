@@ -1,17 +1,15 @@
-" use client\;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
 
-// export function generateStaticParams() {
+export function generateStaticParams() {
   return caseStudies.map((cs) => ({ slug: cs.slug }));
 }
 
-export default function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
-  
-  const project = getCaseStudyBySlug((params as any).slug);
+export default function CaseStudyPage({ params }: { params: { slug: string } }) {
+  const project = getCaseStudyBySlug(params.slug);
   if (!project) notFound();
 
   return (
@@ -22,7 +20,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 mb-10">
           <Link href="/deployments" className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 hover:text-white transition-colors">
-            &#8592; Back to Deployments
+            &larr; Back to Deployments
           </Link>
         </div>
 
@@ -97,7 +95,6 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
         <h2 className="font-display text-[40px] text-white mb-6">Need a similar architecture?</h2>
         <p className="text-white/40 font-light mb-10 max-w-[400px]">Engage our engineering team for a technical review of your operations.</p>
         <button
-            onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
             className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white"
           >
             Initiate Engagement &rarr;
