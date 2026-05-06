@@ -70,7 +70,7 @@ export default function EngageModal() {
                       required
                       value={form.name}
                       onChange={e => setForm({...form, name: e.target.value})}
-                      placeholder="Baljinder Singh"
+                      placeholder="Your Name"
                       className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-[13px] text-white placeholder-white/20 focus:outline-none focus:border-accent2/50 transition-colors"
                     />
                   </div>
@@ -94,7 +94,7 @@ export default function EngageModal() {
                       type="tel"
                       value={form.phone}
                       onChange={e => setForm({...form, phone: e.target.value})}
-                      placeholder="+91 86555 09976"
+                      placeholder="Your Phone Number"
                       className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-[13px] text-white placeholder-white/20 focus:outline-none focus:border-accent2/50 transition-colors"
                     />
                   </div>
@@ -180,7 +180,7 @@ export default function EngageModal() {
                 </svg>
               </div>
               <h3 className="font-display font-medium text-[28px] text-white mb-3">Enquiry Received.</h3>
-              <p className="text-[14px] text-white/50 font-light mb-8 max-w-[320px] mx-auto">Baljinder and the BITSS team will review your brief and get back to you within 24 hours.</p>
+              <p className="text-[14px] text-white/50 font-light mb-8 max-w-[320px] mx-auto">BITSS will review your requirement and get back to you within 24 hours.</p>
               <button
                 onClick={close}
                 className="font-mono text-[11px] uppercase tracking-[0.1em] px-8 py-3 bg-white/5 border border-white/10 text-white rounded-full hover:bg-white hover:text-void transition-all"
