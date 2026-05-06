@@ -383,11 +383,16 @@ export default function Home() {
 
         {/* DEPLOYMENTS */}
         <section id="deployments" className="bg-void py-[120px] px-6 lg:px-16  relative z-20 border-t border-white/5">
-          <div className="flex flex-col mb-16 max-w-[1600px] mx-auto">
-            <div className="font-mono text-[10px] font-medium tracking-[0.2em] text-accent uppercase flex items-center gap-3 mb-4">
-              <span className="block w-6 h-[1px] bg-accent"></span> Production Results
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 max-w-[1600px] mx-auto gap-6">
+            <div>
+              <div className="font-mono text-[10px] font-medium tracking-[0.2em] text-accent uppercase flex items-center gap-3 mb-4">
+                <span className="block w-6 h-[1px] bg-accent"></span> Production Results
+              </div>
+              <h2 className="font-display font-medium text-[42px] md:text-[56px] text-white leading-none">Selected Deployments</h2>
             </div>
-            <h2 className="font-display font-medium text-[42px] md:text-[56px] text-white leading-none">Selected Deployments</h2>
+            <Link href="/deployments" className="font-mono text-[10px] font-medium tracking-[0.1em] text-white uppercase px-6 py-2.5 border border-white/20 rounded-full hover:bg-white hover:text-void transition-colors">
+              View All Deployments ↗
+            </Link>
           </div>
           
           <div className="flex flex-col border-t border-white/10 max-w-[1600px] mx-auto">
@@ -422,6 +427,14 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            
+            {/* Added View All Button at the bottom of the list */}
+            <div className="flex justify-center mt-12 mb-4 relative z-10 w-full">
+              <Link href="/deployments" className="font-mono text-[11px] font-medium tracking-[0.1em] text-void uppercase px-8 py-3.5 bg-white rounded-full hover:bg-accent2 hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-3 group">
+                View All Deployments 
+                <span className="transform group-hover:translate-x-1 transition-transform">?</span>
+              </Link>
+            </div>
           </div>
         </section>
 
