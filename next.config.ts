@@ -7,6 +7,7 @@ const isGitHubPages = process.env.DEPLOY_TARGET === 'github';
 const nextConfig: NextConfig = {
   output: 'export',
   images: { unoptimized: true },
+  trailingSlash: true,
   basePath: isGitHubPages ? '/bitss-enterprise' : '',
   assetPrefix: isGitHubPages ? '/bitss-enterprise/' : '',
 };

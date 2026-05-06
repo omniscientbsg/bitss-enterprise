@@ -391,7 +391,7 @@ export default function Home() {
               <h2 className="font-display font-medium text-[42px] md:text-[56px] text-white leading-none">Selected Deployments</h2>
             </div>
             <Link href="/deployments" className="font-mono text-[10px] font-medium tracking-[0.1em] text-white uppercase px-6 py-2.5 border border-white/20 rounded-full hover:bg-white hover:text-void transition-colors">
-              View All Deployments ↗
+              View All Deployments &rarr;
             </Link>
           </div>
           
@@ -431,8 +431,8 @@ export default function Home() {
             {/* Added View All Button at the bottom of the list */}
             <div className="flex justify-center mt-12 mb-4 relative z-10 w-full">
               <Link href="/deployments" className="font-mono text-[11px] font-medium tracking-[0.1em] text-void uppercase px-8 py-3.5 bg-white rounded-full hover:bg-accent2 hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center gap-3 group">
-                View All Deployments 
-                <span className="transform group-hover:translate-x-1 transition-transform">?</span>
+                View All Deployments &rarr;
+                <span className="transform group-hover:translate-x-1 transition-transform"></span>
               </Link>
             </div>
           </div>

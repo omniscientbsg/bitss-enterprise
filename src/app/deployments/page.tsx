@@ -68,7 +68,7 @@ export default function Deployments() {
                 </div>
                 <div className="mt-8">
                   <Link href={`/deployments/${project.slug}`} className={`inline-flex items-center text-white/40 font-mono text-[11px] tracking-widest uppercase group-hover:${project.accent} transition-colors border border-white/5 rounded-full px-5 py-2 hover:bg-white/[0.05] bg-white/[0.02]`}>
-                    View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">+'</span>
+                    View Case Study <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                   </Link>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function Deployments() {
             onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
             className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white w-full sm:w-auto text-center"
           >
-            Initiate Architecture Review +'
+            Initiate Architecture Review &rarr;
           </button>
         </div>
       </section>

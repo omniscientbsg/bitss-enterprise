@@ -20,7 +20,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 mb-10">
           <Link href="/deployments" className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 hover:text-white transition-colors">
-            +? Back to Deployments
+            &larr; Back to Deployments
           </Link>
         </div>
 
@@ -98,7 +98,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             onClick={() => window.dispatchEvent(new CustomEvent("bitss-engage"))}
             className="font-mono text-[11px] font-bold tracking-[0.1em] uppercase px-10 py-4 bg-white text-void rounded-full shadow-[0_5px_30px_rgba(255,255,255,0.15)] transition-all hover:scale-105 hover:bg-accent2 hover:text-white"
           >
-            Initiate Engagement +'
+            Initiate Engagement &rarr;
         </button>
       </section>
 
